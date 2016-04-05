@@ -10,3 +10,6 @@
 /vendor/
 /bin/
 /composer.phar
+/error.log
+/access.log
+/web/.htaccess
