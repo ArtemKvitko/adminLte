@@ -33,16 +33,14 @@ security:
         main:
             anonymous: ~
             form_login:
-                login_path: web_main_login
-                check_path: web_main_login_check
+                login_path: web_security_login
+                check_path: web_security_login_check
             logout:
-                path: web_main_logout
+                path: web_security_logout
                 invalidate_session: true
-                target: web_main_login
+                target: web_security_login
 
     access_control:
-#        - { path: ^/admin, roles: ROLE_ADMIN }
-#        - { path: ^/ru/admin, roles: ROLE_ADMIN }
-#        - { path: ^/en/admin, roles: ROLE_ADMIN }
-#        - { path: ^/pilot, roles: ROLE_USER }
-#        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
