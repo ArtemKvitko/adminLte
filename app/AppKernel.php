@@ -18,7 +18,8 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new Web\LoydAdminBundle\LoydAdminBundle(),
             new Web\SecurityBundle\WebSecurityBundle(),
-
+            new Web\CitiesBundle\WebCitiesBundle(),
+            new Web\AssetsBundle\WebAssetsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
