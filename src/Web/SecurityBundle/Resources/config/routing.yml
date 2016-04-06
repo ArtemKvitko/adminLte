@@ -1,0 +1,3 @@
+web_security_homepage:
+    path:     /
+    defaults: { _controller: WebSecurityBundle:Default:index }
