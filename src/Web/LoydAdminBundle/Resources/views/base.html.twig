@@ -36,7 +36,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="#" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>LT</span>
             <!-- logo for regular state and mobile devices -->
@@ -315,7 +315,7 @@
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                        <li class="active"><a href="{{ path('loyd_admin_homepage')}}"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
 
                     </ul>
                 </li>
@@ -539,11 +539,12 @@
     %}
     <script src="{{ asset_url }}"></script>
 
-    <script>
-        $.widget.bridge('uibutton', $.ui.button);
-    </script>
 
     {% endjavascripts%}
 {% endblock %}
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+
 </body>
 </html>
