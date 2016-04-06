@@ -2,8 +2,9 @@
 
 namespace Web\SecurityBundle\Repository;
 
-use Doctrine\ORM\EntityRepository;
-
 class AdminRepository extends BaseUserRepository
 {
+    public function supportsClass($class) {
+        return $class === 'Web\SecurityBundle\Entity\Admin';
+    }
 }

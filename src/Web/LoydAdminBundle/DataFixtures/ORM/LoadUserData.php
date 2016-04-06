@@ -1,6 +1,6 @@
 <?php
 
-namespace Web\LoydAdminBundle\DataFixtures;
+namespace Web\LoydAdminBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -22,8 +22,8 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
 
     public function load(ObjectManager $manager)
     {
-        $user = new User();
-        for($i=0; $i<10; $i++){
+        for($i=1; $i <= 10; $i++){
+            $user = new User();
             $user->setUsername('user'.$i);
             $user->setName('user'.$i.$i);
             $user->setSurname('user'.$i.$i.$i);
