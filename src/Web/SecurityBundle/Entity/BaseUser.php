@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * BaseUser
  *
- * @ORM\Table(indexes={@ORM\Index(name="name_email_idx", columns={"name,email"})})
+ * @ORM\Table(name="name_email")
  * @ORM\MappedSuperclass
  */
 abstract class BaseUser implements AdvancedUserInterface, \Serializable
@@ -46,7 +46,7 @@ abstract class BaseUser implements AdvancedUserInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, unique=true,nullable=false)
+     * @ORM\Column(name="name", type="string", length=255, unique=true)
      */
     private $name;
     /**
