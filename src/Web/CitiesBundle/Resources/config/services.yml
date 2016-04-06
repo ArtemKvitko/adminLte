@@ -1,0 +1,4 @@
+services:
+#    web_cities.example:
+#        class: Web\CitiesBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
