@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Amortization</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ amortization.id }}</td>
+            </tr>
+            <tr>
+                <th>Period</th>
+                <td>{% if amortization.period %}{{ amortization.period|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Asetid</th>
+                <td>{{ amortization.asetId }}</td>
+            </tr>
+            <tr>
+                <th>Amortization</th>
+                <td>{{ amortization.amortization }}</td>
+            </tr>
+            <tr>
+                <th>Createtime</th>
+                <td>{% if amortization.createTime %}{{ amortization.createTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Updatetime</th>
+                <td>{% if amortization.updateTime %}{{ amortization.updateTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('amortization_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('amortization_edit', { 'id': amortization.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

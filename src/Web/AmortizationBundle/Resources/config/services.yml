@@ -1,0 +1,4 @@
+services:
+#    web_amortization.example:
+#        class: Web\AmortizationBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

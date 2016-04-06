@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Amortization list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Period</th>
+                <th>Asetid</th>
+                <th>Amortization</th>
+                <th>Createtime</th>
+                <th>Updatetime</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for amortization in amortizations %}
+            <tr>
+                <td><a href="{{ path('amortization_show', { 'id': amortization.id }) }}">{{ amortization.id }}</a></td>
+                <td>{% if amortization.period %}{{ amortization.period|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ amortization.asetId }}</td>
+                <td>{{ amortization.amortization }}</td>
+                <td>{% if amortization.createTime %}{{ amortization.createTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if amortization.updateTime %}{{ amortization.updateTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('amortization_show', { 'id': amortization.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('amortization_edit', { 'id': amortization.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('amortization_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
