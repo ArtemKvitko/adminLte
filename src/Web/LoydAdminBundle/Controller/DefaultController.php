@@ -10,4 +10,8 @@ class DefaultController extends Controller
     {
         return $this->render('LoydAdminBundle::base.html.twig');
     }
+    public function loginAction()
+    {
+        return $this->render('LoydAdminBundle:Login:login.html.twig');
+    }
 }
