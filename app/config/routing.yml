@@ -1,5 +1,13 @@
+
 web_amortization:
     resource: "@WebAmortizationBundle/Resources/config/routing.yml"
+
+web_assets:
+    resource: "@WebAssetsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+web_cities:
+    resource: "@WebCitiesBundle/Resources/config/routing.yml"
     prefix:   /
 
 web_security:
