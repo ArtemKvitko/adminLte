@@ -1,3 +1,7 @@
+web_security:
+    resource: "@WebSecurityBundle/Resources/config/routing.yml"
+    prefix:   /
+
 loyd_admin:
     resource: "@LoydAdminBundle/Resources/config/routing.yml"
     prefix:   /
