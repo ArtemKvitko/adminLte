@@ -1,3 +1,0 @@
-web_cities_homepage:
-    path:     /
-    defaults: { _controller: WebCitiesBundle:Default:index }

@@ -1,3 +1,0 @@
-web_assets_homepage:
-    path:     /
-    defaults: { _controller: WebAssetsBundle:Default:index }

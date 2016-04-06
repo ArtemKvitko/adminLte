@@ -14,15 +14,6 @@ web_security:
     resource: "@WebSecurityBundle/Resources/config/routing.yml"
     prefix:   /
 
-loyd_admin:
-    resource: "@LoydAdminBundle/Resources/config/routing.yml"
-    prefix:   /
-
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
-
-# app/config/routing.yml
-user_registration:
-    path:     /register
-    defaults: { _controller: AppBundle:Registration:register }
+admin:
+    resource: "@WebAdminBundle/Resources/config/routing.yml"
+    prefix:

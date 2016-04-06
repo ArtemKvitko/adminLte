@@ -1,0 +1,7 @@
+loyd_admin_homepage:
+    path:     /admin
+    defaults: { _controller: WebAdminBundle:Admin:index }
+#loyd_admin_login:
+#        path:     /login
+#        defaults: { _controller: AdminBundle:Default:login }
+
