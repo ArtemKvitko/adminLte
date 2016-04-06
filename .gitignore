@@ -14,3 +14,4 @@
 /access.log
 /web/.htaccess
 /.idea
+composer-setup.php
