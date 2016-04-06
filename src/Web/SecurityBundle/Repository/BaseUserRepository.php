@@ -16,7 +16,6 @@ abstract class BaseUserRepository extends EntityRepository implements UserLoader
             ->setParameter('email', $username)
             ->getQuery()
             ->getOneOrNullResult();
-
         if (null === $user) {
             $message = sprintf(
                 'Unable to find an active user identified by "%s".',

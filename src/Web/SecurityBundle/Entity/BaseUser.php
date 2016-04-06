@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * BaseDcsPilots
+ * BaseUser
  *
  * @ORM\MappedSuperclass
  */
@@ -69,7 +69,12 @@ abstract class BaseUser implements AdvancedUserInterface, \Serializable
      *     options={"default" = "ROLE_USER"})
      */
     private $roles;
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="salt", type="string", length=255, nullable=true)
+     */
+    private $salt;
     /**
      * Get id
      *
