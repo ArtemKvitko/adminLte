@@ -4,6 +4,7 @@ namespace Web\CitiesBundle\Entity;
 
 use Web\AssetsBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Cities
@@ -24,27 +25,30 @@ class Cities
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="name", type="string", length=32)
      */
     private $name;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
+     * @Assert\Type(
+     *  type="integer",
+     *  message="The value {{ value }} is not a valid {{ type }}."
+     * )
      * @ORM\Column(name="postalcode", type="string", length=12, unique=true)
      */
     private $postalcode;
 
     /**
+     * @Assert\NotBlank()
      * @var string
-     *
      * @ORM\Column(name="country", type="string", length=32)
      */
     private $country;
     
     /**
-     * 
      * @ORM\ManyToOne(targetEntity="Web\SecurityBundle\Entity\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
