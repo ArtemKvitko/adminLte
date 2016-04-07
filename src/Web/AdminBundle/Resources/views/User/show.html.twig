@@ -3,7 +3,7 @@
 {% block content_wrapper %}
     <h1>User</h1>
 
-    <table>
+    <table class="table table-bordered">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -13,10 +13,7 @@
                 <th>Username</th>
                 <td>{{ User.username }}</td>
             </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ User.password }}</td>
-            </tr>
+
             <tr>
                 <th>Email</th>
                 <td>{{ User.email }}</td>
@@ -37,22 +34,14 @@
                 <th>Roles</th>
                 <td>{% for role in User.roles %}{{ role }}{% endfor %}</td>
             </tr>
-            <tr>
-                <th>Salt</th>
-                <td>{{ User.salt }}</td>
-            </tr>
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_users_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('admin_users_edit', { 'id': User.id }) }}">Edit</a>
-        </li>
-        <li>
-            <a href="{{ path('admin_users_delete', {'id': User.id}) }}">Delete</a>
-        </li>
-    </ul>
+
+            <a class="btn btn-primary" href="{{ path('admin_users_index') }}">Back to the list</a>
+
+            <a class="btn btn-warning" href="{{ path('admin_users_edit', { 'id': User.id }) }}">Edit</a>
+
+            <a class="btn btn-danger" href="{{ path('admin_users_delete', {'id': User.id}) }}">Delete</a>
+
 {% endblock %}

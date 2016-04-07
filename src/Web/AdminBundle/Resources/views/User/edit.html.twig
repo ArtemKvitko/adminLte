@@ -5,15 +5,12 @@
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <input type="submit" class="btn btn-info" value="Edit" />
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_users_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('admin_users_delete', {'id': User.id}) }}">Delete</a>
-        </li>
-    </ul>
+
+            <a class="btn btn-primary" href="{{ path('admin_users_index') }}">Back to the list</a>
+
+            <a class="btn btn-danger" href="{{ path('admin_users_delete', {'id': User.id}) }}">Delete</a>
+
 {% endblock %}
