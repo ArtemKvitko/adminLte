@@ -36,7 +36,7 @@ class CategoriesController extends Controller
     public function newAction(Request $request)
     {
         $category = new Categories();
-        $form = $this->createForm('Web\AmortizationBundle\Form\CategoriesType', $category);
+        $form = $this->createForm(new CategoriesType(), $category);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -58,12 +58,10 @@ class CategoriesController extends Controller
      *
      */
     public function showAction(Categories $category)
-    {
-        $deleteForm = $this->createDeleteForm($category);
-
-        return $this->render('categories/show.html.twig', array(
+    {        
+        return $this->render('WebAmortizationBundle:Categories:show.html.twig', array(
             'category' => $category,
-            'delete_form' => $deleteForm->createView(),
+            'delete_url' => $this->createDeleteUrl($category),
         ));
     }
 
@@ -72,9 +70,8 @@ class CategoriesController extends Controller
      *
      */
     public function editAction(Request $request, Categories $category)
-    {
-        $deleteForm = $this->createDeleteForm($category);
-        $editForm = $this->createForm('Web\AmortizationBundle\Form\CategoriesType', $category);
+    {        
+        $editForm = $this->createForm(new CategoriesType(), $category);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -88,7 +85,7 @@ class CategoriesController extends Controller
         return $this->render('WebAmortizationBundle:Categories:edit.html.twig', array(
             'category' => $category,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'delete_url' => $this->createDeleteUrl($category),
         ));
     }
 
@@ -98,7 +95,7 @@ class CategoriesController extends Controller
      */
     public function deleteAction(Request $request, Categories $category)
     {
-        $form = $this->createDeleteForm($category);
+        $form = $this->createDeleteUrl($category);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -117,12 +114,17 @@ class CategoriesController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Categories $category)
+    private function createDeleteUrl(Categories $category)
     {
+        echo $this->generateUrl('categories_delete', array('id' => $category->getId()));
+        
+        /*
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('categories_delete', array('id' => $category->getId())))
             ->setMethod('DELETE')
             ->getForm()
-        ;
+        ;*/
+        
+        return $this->generateUrl('categories_delete', array('id' => $category->getId()));
     }
 }

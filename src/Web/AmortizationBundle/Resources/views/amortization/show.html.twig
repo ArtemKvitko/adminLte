@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{#{% extends 'base.html.twig' %}#}
 
 {% block body %}
     <h1>Amortization</h1>
@@ -40,9 +40,7 @@
             <a href="{{ path('amortization_edit', { 'id': amortization.id }) }}">Edit</a>
         </li>
         <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
+<a href="{{ delete_url }}">Delete</a><br/>
         </li>
     </ul>
 {% endblock %}
