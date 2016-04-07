@@ -1,19 +1,16 @@
-{#{% extends 'base.html.twig' %}#}
+{% extends 'WebAdminBundle::base.html.twig' %}
 
-{% block body %}
+{% block content_wrapper %}
     <h1>Categories edit</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <input type="submit" class="btn btn-info" value="Edit" />
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('categories_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ delete_url }}">Delete</a><br/>
-        </li>
-    </ul>
+
+            <a class="btn btn-primary" href="{{ path('categories_index') }}">Back to the list</a>
+       
+            <a class="btn btn-danger" href="{{ delete_url }}">Delete</a><br/>
+        
 {% endblock %}

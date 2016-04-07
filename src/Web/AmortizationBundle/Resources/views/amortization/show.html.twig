@@ -1,9 +1,9 @@
-{#{% extends 'base.html.twig' %}#}
+{% extends 'WebAdminBundle::base.html.twig' %}
 
-{% block body %}
+{% block content_wrapper %}
     <h1>Amortization</h1>
 
-    <table>
+    <table class="table table-bordered">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -32,15 +32,10 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('amortization_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('amortization_edit', { 'id': amortization.id }) }}">Edit</a>
-        </li>
-        <li>
-<a href="{{ delete_url }}">Delete</a><br/>
-        </li>
-    </ul>
+
+    <a class="btn btn-primary" href="{{ path('amortization_index') }}">Back to the list</a>
+    <a class="btn btn-warning" href="{{ path('amortization_edit', { 'id': amortization.id }) }}">Edit</a>
+    <a class="btn btn-danger" href="{{ delete_url }}">Delete</a>
+
+
 {% endblock %}

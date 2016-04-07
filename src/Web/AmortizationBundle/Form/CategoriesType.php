@@ -6,6 +6,11 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
+
+
 class CategoriesType extends AbstractType
 {
     /**
@@ -15,9 +20,9 @@ class CategoriesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('sabNumber')
-            ->add('title')
-            ->add('usefulTime', 'datetime')
+            ->add('sabNumber', IntegerType::class, array('attr' => array('class' => 'form-control')))
+            ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('usefulTime', TimeType::class, array('attr' => array('class' => 'form-control')))
         ;
     }
     
