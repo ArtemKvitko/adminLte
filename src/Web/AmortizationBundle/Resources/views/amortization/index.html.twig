@@ -1,9 +1,9 @@
-{#{% extends 'LoydAdminBundle::base.html.twig' %}#}
+{% extends 'WebAdminBundle::base.html.twig' %}
 
 {% block content_wrapper %}
     <h1>Amortization list</h1>
 
-    <table>
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -27,10 +27,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('amortization_show', { 'id': amortization.id }) }}">show</a>
+                            <a href="{{ path('amortization_show', { 'id': amortization.id }) }}" class="btn btn-block btn-success btn-sm">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('amortization_edit', { 'id': amortization.id }) }}">edit</a>
+                            <a href="{{ path('amortization_edit', { 'id': amortization.id }) }}" class="btn btn-block btn-success btn-sm">edit</a>
                         </li>
                     </ul>
                 </td>
