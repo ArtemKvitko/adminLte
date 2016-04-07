@@ -40,6 +40,12 @@ class UserController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $user->getAvatar();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $avatarDir = $this->container->getParameter('kernel.root_dir').'/../web/uploads/avatars';
+            $file->move($avatarDir, $fileName);
+            $user->setAvatar($fileName);
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
@@ -76,6 +82,11 @@ class UserController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $file = $user->getAvatar();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $avatarDir = $this->container->getParameter('kernel.root_dir').'/../web/uploads/avatars';
+            $file->move($avatarDir, $fileName);
+            $user->setAvatar($fileName);
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();

@@ -8,6 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class UserType extends AbstractType
 {
@@ -24,6 +25,11 @@ class UserType extends AbstractType
                 )
             ))
             ->add('email',TextType::class,array(
+                'attr'=>array(
+                    'class'=> 'form-control'
+                )
+            ))
+            ->add('password',TextType::class,array(
                 'attr'=>array(
                     'class'=> 'form-control'
                 )
@@ -54,6 +60,11 @@ class UserType extends AbstractType
                     )
                 )
             )
+        
+            ->add('avatar', FileType::class, array(
+                'label' => 'Avatar (JPEG file)',
+               'data_class' => null,
+                'required' => false))
         ;
     }
     
