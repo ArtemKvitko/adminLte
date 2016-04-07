@@ -66,7 +66,7 @@ class AmortizationController extends Controller
     {
         $deleteForm = $this->createDeleteForm($amortization);
         
-        return $this->render('amortization/show.html.twig', array(
+        return $this->render('WebAmortizationBundle:Amortization:show.html.twig', array(
             'amortization' => $amortization,
             'delete_form' => $deleteForm->createView(),
         ));
