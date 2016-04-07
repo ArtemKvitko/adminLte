@@ -64,11 +64,10 @@ class AmortizationController extends Controller
      */
     public function showAction(Amortization $amortization)
     {
-        $deleteForm = $this->createDeleteForm($amortization);
         
         return $this->render('WebAmortizationBundle:Amortization:show.html.twig', array(
             'amortization' => $amortization,
-            'delete_form' => $deleteForm->createView(),
+            'delete_url' => $this->createDeleteUrl($amortization),
         ));
     }
 
@@ -78,7 +77,6 @@ class AmortizationController extends Controller
      */
     public function editAction(Request $request, Amortization $amortization)
     {
-        $deleteForm = $this->createDeleteForm($amortization);
         $editForm = $this->createForm('Web\AmortizationBundle\Form\AmortizationType', $amortization);
         $editForm->handleRequest($request);
 
@@ -93,7 +91,7 @@ class AmortizationController extends Controller
         return $this->render('WebAmortizationBundle:Amortization:edit.html.twig', array(
             'amortization' => $amortization,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'delete_url' => $this->createDeleteUrl($amortization),
         ));
     }
 
@@ -103,7 +101,7 @@ class AmortizationController extends Controller
      */
     public function deleteAction(Request $request, Amortization $amortization)
     {
-        $form = $this->createDeleteForm($amortization);
+        $form = $this->createDeleteUrl($amortization);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -122,12 +120,15 @@ class AmortizationController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Amortization $amortization)
+    private function createDeleteUrl(Amortization $amortization)
     {
+        /*
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('amortization_delete', array('id' => $amortization->getId())))
             ->setMethod('DELETE')
             ->getForm()
-        ;
+        ;*/
+        
+        return $this->generateUrl('amortization_delete', array('id' => $amortization->getId()));
     }
 }
