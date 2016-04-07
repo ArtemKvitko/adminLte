@@ -16,3 +16,4 @@
 /.idea
 composer-setup.php
 /nbproject/
+/web/bundles/upload
