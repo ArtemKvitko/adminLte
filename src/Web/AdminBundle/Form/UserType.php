@@ -5,6 +5,9 @@ namespace Web\AdminBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class UserType extends AbstractType
 {
@@ -15,32 +18,29 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username','text',array(
+            ->add('username',TextType::class,array(
                 'attr'=>array(
                     'class'=> 'form-control'
                 )
             ))
-            ->add('email','text',array(
+            ->add('email',TextType::class,array(
                 'attr'=>array(
                     'class'=> 'form-control'
                 )
             ))
-            ->add('name','text',array(
+            ->add('name',TextType::class,array(
                 'attr'=>array(
                     'class'=> 'form-control'
                 )
             ))
-            ->add('surname','text',array(
+            ->add('surname',TextType::class,array(
                 'attr'=>array(
                     'class'=> 'form-control'
                 )
             ))
-            ->add('isActive','text',array(
-                'attr'=>array(
-                    'class'=> 'form-control'
-                )
-            ))
-            ->add('role', 'choice', array(
+            ->add('isActive',CheckboxType::class
+            )
+            ->add('role', ChoiceType::class, array(
                     'choices' => array(
                         'User' => 'ROLE_USER',
                         'Admin' => 'ROLE_ADMIN',
