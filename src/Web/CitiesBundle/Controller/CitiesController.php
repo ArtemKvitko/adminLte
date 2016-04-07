@@ -44,7 +44,7 @@ class CitiesController extends Controller
             $em->persist($city);
             $em->flush();
 
-            return $this->redirectToRoute('cities_show', array('id' => $city->getId()));
+            return $this->redirectToRoute('cities_index');
         }
 
         return $this->render('WebCitiesBundle:cities:new.html.twig', array(
@@ -53,19 +53,7 @@ class CitiesController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a Cities entity.
-     *
-     */
-    public function showAction(Cities $city)
-    {
-        $deleteForm = $this->createDeleteForm($city);
-
-        return $this->render('WebCitiesBundle:cities:show.html.twig', array(
-            'city' => $city,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
+   
 
     /**
      * Displays a form to edit an existing Cities entity.
