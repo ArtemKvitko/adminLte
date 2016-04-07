@@ -99,18 +99,23 @@ class AmortizationController extends Controller
      * Deletes a Amortization entity.
      *
      */
-    public function deleteAction(Request $request, Amortization $amortization)
+    public function deleteAction(Request $request)
     {
-        $form = $this->createDeleteUrl($amortization);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($amortization);
-            $em->flush();
+               
+        $id = $request->get('id');
+        
+        $em = $this->getDoctrine()->getManager();
+        $amortization = $em->getRepository('WebAmortizationBundle:Amortization')->findOneById($id);
+        
+        if (empty($amortization)) {
+            return $this->redirectToRoute('amortization_index');
         }
-
-        return $this->redirectToRoute('amortization_index');
+        
+        $em->remove($amortization);
+        $em->flush();
+        
+        return $this->redirectToRoute('amortization_index');        
+        
     }
 
     /**

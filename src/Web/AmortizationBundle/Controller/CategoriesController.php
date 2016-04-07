@@ -93,17 +93,20 @@ class CategoriesController extends Controller
      * Deletes a Categories entity.
      *
      */
-    public function deleteAction(Request $request, Categories $category)
-    {
-        $form = $this->createDeleteUrl($category);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($category);
-            $em->flush();
+    public function deleteAction(Request $request)
+    {        
+        $id = $request->get('id');
+        
+        $em = $this->getDoctrine()->getManager();
+        $category = $em->getRepository('WebAmortizationBundle:Categories')->findOneById($id);
+        
+        if (empty($category)) {
+            return $this->redirectToRoute('categories_index');
         }
-
+        
+        $em->remove($category);
+        $em->flush();
+        
         return $this->redirectToRoute('categories_index');
     }
 
@@ -116,7 +119,7 @@ class CategoriesController extends Controller
      */
     private function createDeleteUrl(Categories $category)
     {
-        echo $this->generateUrl('categories_delete', array('id' => $category->getId()));
+        //echo $this->generateUrl('categories_delete', array('id' => $category->getId()));
         
         /*
         return $this->createFormBuilder()
