@@ -1,6 +1,6 @@
 <?php
 
-namespace Web\LoydAdminBundle\DataFixtures;
+namespace Web\LoydAdminBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -34,8 +34,7 @@ class LoadAdminData implements FixtureInterface, ContainerAwareInterface
             $admin->setRole('ROLE_ADMIN');
             $manager->persist($admin);
         }
-        $manager->flush();           
-
+        $manager->flush();
     }
 
      

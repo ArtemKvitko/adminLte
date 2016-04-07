@@ -8,10 +8,6 @@ class LoginController extends Controller
 {
     public function loginAction()
     {
-        $user = new \Web\SecurityBundle\Entity\User();
-        $user->setName("MyName");
-        $user->setSurname("MySurname");
-        var_dump($user);exit;
         $authenticationUtils = $this->get('security.authentication_utils');
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();

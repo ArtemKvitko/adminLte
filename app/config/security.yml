@@ -7,6 +7,9 @@ security:
         Web\SecurityBundle\Entity\User:
             algorithm: bcrypt
             cost: 5
+        Web\SecurityBundle\Entity\Admin:
+            algorithm: bcrypt
+            cost: 5
 
     providers:
         chain_provider:

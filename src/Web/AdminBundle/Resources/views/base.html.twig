@@ -7,17 +7,18 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     {% block stylesheets %}
-        {% stylesheets  'assets/bootstrap/css/bootstrap.min.css'
-                        'assets/dist/css/AdminLTE.min.css'
-                        'assets/dist/css/skins/_all-skins.min.css'
-                        'assets/plugins/iCheck/flat/blue.css'
-                        'assets/plugins/morris/morris.css'
-                        'assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css'
-                        'assets/plugins/datepicker/datepicker3.css'
-                        'assets/plugins/daterangepicker/daterangepicker-bs3.css'
-                        'assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'
-                        'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
-                        'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'
+        {% stylesheets
+            'assets/bootstrap/css/bootstrap.min.css'
+            'assets/dist/css/AdminLTE.min.css'
+            'assets/dist/css/skins/_all-skins.min.css'
+            'assets/plugins/iCheck/flat/blue.css'
+            'assets/plugins/morris/morris.css'
+            'assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css'
+            'assets/plugins/datepicker/datepicker3.css'
+            'assets/plugins/daterangepicker/daterangepicker-bs3.css'
+            'assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'
+            'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
+            'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'
         filter='cssrewrite' %}
         <link rel="stylesheet" href="{{ asset_url }}" />
 
@@ -270,7 +271,7 @@
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="{{ path('web_security_logout') }} " class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>
