@@ -1,0 +1,40 @@
+{% extends 'WebAdminBundle::base.html.twig' %}
+
+{% block content_wrapper %}
+    <h1>Cities</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ city.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ city.name }}</td>
+            </tr>
+            <tr>
+                <th>Postalcode</th>
+                <td>{{ city.postalcode }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ city.country }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cities_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('cities_edit', { 'id': city.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

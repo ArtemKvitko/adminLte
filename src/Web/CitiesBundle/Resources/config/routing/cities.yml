@@ -1,0 +1,24 @@
+cities_index:
+    path:     /
+    defaults: { _controller: "WebCitiesBundle:Cities:index" }
+    methods:  GET
+
+cities_show:
+    path:     /{id}/show
+    defaults: { _controller: "WebCitiesBundle:Cities:show" }
+    methods:  GET
+
+cities_new:
+    path:     /new
+    defaults: { _controller: "WebCitiesBundle:Cities:new" }
+    methods:  [GET, POST]
+
+cities_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WebCitiesBundle:Cities:edit" }
+    methods:  [GET, POST]
+
+cities_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WebCitiesBundle:Cities:delete" }
+    methods:  DELETE

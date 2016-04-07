@@ -1,0 +1,4 @@
+web_cities_cities:
+    resource: "@WebCitiesBundle/Resources/config/routing/cities.yml"
+    prefix:   /cities
+
