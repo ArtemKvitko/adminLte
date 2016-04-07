@@ -29,6 +29,13 @@ abstract class BaseUser implements AdvancedUserInterface, \Serializable
      * @ORM\Column(name="username", type="string", length=32, unique=true)
      */
     private $username;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="avatar", type="string", length=32, unique=true)
+     */
+    private $avatar;
 
     /**
      * @var string

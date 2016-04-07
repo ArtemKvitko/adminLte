@@ -1,5 +1,10 @@
 <?php
-
+/*
+ * 
+ * use in cmd: php app/console doctrine:fixtures:load --append
+ * to input in database data ("users and admins")
+ * 
+ */
 namespace Web\LoydAdminBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;

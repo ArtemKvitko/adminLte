@@ -29,6 +29,13 @@ abstract class BaseUser implements AdvancedUserInterface, \Serializable
      * @ORM\Column(name="username", type="string", length=32, unique=true)
      */
     private $username;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="avatar", type="string", length=32, unique=true)
+     */
+    private $avatar;
 
     /**
      * @var string
@@ -311,5 +318,28 @@ abstract class BaseUser implements AdvancedUserInterface, \Serializable
         $this->salt = $salt;
 
         return $this;
+    }
+
+    /**
+     * Set avatar
+     *
+     * @param string $avatar
+     * @return BaseUser
+     */
+    public function setAvatar($avatar)
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    /**
+     * Get avatar
+     *
+     * @return string 
+     */
+    public function getAvatar()
+    {
+        return $this->avatar;
     }
 }
