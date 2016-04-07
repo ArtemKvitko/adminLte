@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * to create User use this command in cmd:"php app/console loyd:user:create"
+ */
+
 namespace Web\SecurityBundle\Command;
 
 use Web\SecurityBundle\WebSecurityBundle;

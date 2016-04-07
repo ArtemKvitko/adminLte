@@ -25,23 +25,17 @@
                 <td>{% if amortization.createTime %}{{ amortization.createTime|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if amortization.updateTime %}{{ amortization.updateTime|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('amortization_show', { 'id': amortization.id }) }}" class="btn btn-block btn-success btn-sm">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('amortization_edit', { 'id': amortization.id }) }}" class="btn btn-block btn-success btn-sm">edit</a>
-                        </li>
-                    </ul>
+                    
+                    <a href="{{ path('amortization_show', { 'id': amortization.id }) }}" class="btn btn-block btn-success btn-sm">show</a>
+                    <br/>   
+                    <a href="{{ path('amortization_edit', { 'id': amortization.id }) }}" class="btn btn-block btn-danger btn-sm">edit</a>
+                                            
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('amortization_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    <a href="{{ path('amortization_new') }}" class="btn btn-primary">Create a new entry</a>
+ 
 {% endblock %}
