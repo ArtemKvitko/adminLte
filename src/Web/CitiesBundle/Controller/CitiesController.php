@@ -98,14 +98,9 @@ class CitiesController extends Controller
      */
     public function deleteAction(Request $request, Cities $city)
     {
-        $form = $this->createDeleteForm($city);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($city);
-            $em->flush();
-        }
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($city);
+        $em->flush();
 
         return $this->redirectToRoute('cities_index');
     }

@@ -21,4 +21,4 @@ admin_users_edit:
 admin_users_delete:
     path:     /delete/{id}
     defaults: { _controller: "WebAdminBundle:User:delete" }
-    methods:  DELETE
+    methods:  [GET]

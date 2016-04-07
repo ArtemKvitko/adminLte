@@ -19,6 +19,6 @@ cities_edit:
     methods:  [GET, POST]
 
 cities_delete:
-    path:     /{id}/delete
+    path:     /delete/{id}
     defaults: { _controller: "WebCitiesBundle:Cities:delete" }
-    methods:  DELETE
+    methods:  [GET]
