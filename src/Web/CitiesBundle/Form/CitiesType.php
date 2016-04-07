@@ -29,7 +29,7 @@ class CitiesType extends AbstractType {
                         'class' => 'form-control'
                     )
                 ))
-                ->add('user_id', EntityType::class, array('placeholder' => "Choose administrative user", 'class' => 'WebSecurityBundle:User', 'attr' => array(
+                ->add('user_id', EntityType::class, array('required'=>false,'placeholder' => "Choose administrative user", 'class' => 'WebSecurityBundle:User', 'attr' => array(
                         'class' => 'form-control'
                     )
                 ))
