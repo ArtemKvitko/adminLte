@@ -32,6 +32,8 @@ security:
             form_login:
                 login_path: web_security_login
                 check_path: web_security_login_check
+                default_target_path: loyd_admin_homepage
+                always_use_default_target_path: true
             logout:
                 path: web_security_logout
                 invalidate_session: true
