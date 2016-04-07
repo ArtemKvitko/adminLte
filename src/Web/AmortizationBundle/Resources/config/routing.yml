@@ -1,6 +1,6 @@
 web_amortization_amortization:
     resource: "@WebAmortizationBundle/Resources/config/routing/amortization.yml"
-    prefix:   /amortization
+    prefix:   /admin/amortization
 
 #web_amortization_homepage:
     #path:     /
@@ -8,4 +8,4 @@ web_amortization_amortization:
 
 web_amortization_categories:
      resource: "@WebAmortizationBundle/Resources/config/routing/categories.yml"
-     prefix:   /categories
+     prefix:   /admin/categories
