@@ -23,11 +23,15 @@ class AmortizationController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->findAll();
-
+        $amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->findAll();        
+        
+        //echo rand(0, 111111).'<hr/>';
+        
         return $this->render('WebAmortizationBundle:Amortization:index.html.twig', array(
             'amortizations' => $amortizations,
         ));
+        
+        
     }
 
     /**
