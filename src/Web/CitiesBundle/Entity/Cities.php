@@ -33,10 +33,6 @@ class Cities
     /**
      * @var string
      * @Assert\NotBlank()
-     * @Assert\Type(
-     *  type="integer",
-     *  message="The value {{ value }} is not a valid {{ type }}."
-     * )
      * @ORM\Column(name="postalcode", type="string", length=12, unique=true)
      */
     private $postalcode;

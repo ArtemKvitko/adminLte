@@ -22,12 +22,12 @@
         <tbody>
         {% for city in cities %}
             <tr>
-                <td><a href="{{ path('cities_show', { 'id': city.id }) }}">{{ city.id }}</a></td>
+                <td>{{ city.id }}</td>
                 <td>{{ city.name }}</td>
                 <td>{{ city.postalcode }}</td>
                 <td>{{ city.country }}</td>
                 <td>
-                           <a class="btn btn-block btn-success btn-sm" href="{{ path('cities_show', { 'id': city.id }) }}">show</a>
+                           
                             <a class="btn btn-block btn-danger btn-sm" href="{{ path('cities_edit', { 'id': city.id }) }}">edit</a>
                 </td>
             </tr>
