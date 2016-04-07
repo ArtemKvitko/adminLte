@@ -320,7 +320,11 @@
 
                     </ul>
                 </li>
-
+                <li>
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>User crud</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                </li>
 
             </ul>
         </section>
@@ -329,25 +333,26 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Dashboard
-                <small>Control panel</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
-            </ol>
-        </section>
-                <!-- right col (We are only adding the ID to make the widgets sortable)-->
+            <section class="content-header">
+                <div class="col-md-12">
+                    {% block content_wrapper %}
+                        <h1>
+                            Dashboard
+                            <small>Control panel</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                            <li class="active">Dashboard</li>
+                        </ol>
+                    {% endblock %}
+                </div>
+
+            </section>
+            <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
 
     </div><!-- /.content-wrapper -->
     <footer class="main-footer">
-        {% block content_wrapper %}
-            
-        {% endblock %}
-        
         <div class="pull-right hidden-xs">
             <b>Version</b> 2.3.0
         </div>
