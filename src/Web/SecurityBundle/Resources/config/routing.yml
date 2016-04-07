@@ -1,3 +1,7 @@
+web_security_homepage:
+    path:     /
+    defaults: { _controller: WebSecurityBundle:Login:login }
+
 web_security_login:
     path:     /login
     defaults: { _controller: WebSecurityBundle:Login:login }

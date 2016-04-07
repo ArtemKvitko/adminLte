@@ -5,3 +5,6 @@ loyd_admin_homepage:
 #        path:     /login
 #        defaults: { _controller: AdminBundle:Default:login }
 
+web_admin_users:
+    resource: "@WebAdminBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/users
