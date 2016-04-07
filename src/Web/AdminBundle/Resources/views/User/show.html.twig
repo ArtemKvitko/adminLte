@@ -1,0 +1,58 @@
+{% extends 'WebAdminBundle::base.html.twig' %}
+
+{% block content_wrapper %}
+    <h1>User</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ User.id }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ User.username }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ User.password }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ User.email }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ User.name }}</td>
+            </tr>
+            <tr>
+                <th>Surname</th>
+                <td>{{ User.surname }}</td>
+            </tr>
+            <tr>
+                <th>Isactive</th>
+                <td>{% if User.isActive %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{% for role in User.roles %}{{ role }}{% endfor %}</td>
+            </tr>
+            <tr>
+                <th>Salt</th>
+                <td>{{ User.salt }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_users_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_users_edit', { 'id': User.id }) }}">Edit</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_users_delete', {'id': User.id}) }}">Delete</a>
+        </li>
+    </ul>
+{% endblock %}
