@@ -22,7 +22,7 @@ class CategoriesType extends AbstractType
         $builder
             ->add('sabNumber', IntegerType::class, array('attr' => array('class' => 'form-control')))
             ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('usefulTime', TimeType::class, array('attr' => array('class' => 'form-control')))
+            ->add('usefulTime', TimeType::class)
         ;
     }
     
