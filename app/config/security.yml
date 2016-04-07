@@ -7,21 +7,14 @@ security:
             algorithm: bcrypt
             cost: 5
             
-        Web\SecurityBundle\Entity\Admin:
-            algorithm: bcrypt
-            cost: 5
-
     providers:
         chain_provider:
             chain:
-                providers: [loyd_db_provider_user, loyd_db_provider_admin]
+                providers: [loyd_db_provider_user]
         loyd_db_provider_user:
             entity:
                 class: WebSecurityBundle:User
-        loyd_db_provider_admin:
-            entity:
-                class: WebSecurityBundle:Admin
-                
+
     role_hierarchy:
         ROLE_TEAM:        ROLE_USER
         ROLE_OPERATOR:    ROLE_USER
@@ -32,7 +25,7 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-            provider: loyd_db_provider_admin
+            provider: loyd_db_provider_user
 
         main:
             anonymous: ~
