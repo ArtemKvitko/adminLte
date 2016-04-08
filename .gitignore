@@ -3,7 +3,6 @@
 /app/cache/*
 /app/config/parameters.yml
 /app/logs/*
-
 /app/phpunit.xml
 /build/
 /vendor/
