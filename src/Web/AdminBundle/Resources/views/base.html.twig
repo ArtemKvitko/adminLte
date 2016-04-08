@@ -38,7 +38,7 @@
 
             <header class="main-header">
                 <!-- Logo -->
-                <a href="#" class="logo">
+                <a href="{{ path('loyd_admin_homepage') }}" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini"><b>A</b>LT</span>
                     <!-- logo for regular state and mobile devices -->
@@ -360,6 +360,11 @@
                         <li>
                             <a href="{{ path('cities_index') }}">
                                 <i class="fa fa-table"></i> <span>Cities control</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a> 
+                        </li>
+                        <li>
+                            <a href="{{ path('assets_index') }}">
+                                <i class="fa fa-table"></i> <span>Assets control</span> <i class="fa fa-angle-left pull-right"></i>
                             </a> 
                         </li>
 
