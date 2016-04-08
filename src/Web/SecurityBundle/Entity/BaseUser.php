@@ -70,7 +70,6 @@ abstract class BaseUser implements AdvancedUserInterface, \Serializable
     private $name;
     /**
      * @var string
-     *
      * @ORM\Column(name="surname", type="string", length=255, unique=true, nullable=false)
      *
      * @Assert\NotBlank(message="surname can't be blank .")
