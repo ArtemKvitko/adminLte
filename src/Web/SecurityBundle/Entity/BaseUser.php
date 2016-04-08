@@ -27,6 +27,8 @@ abstract class BaseUser implements AdvancedUserInterface, \Serializable
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=32, unique=true)
+     *
+     * @Assert\NotBlank(message="username can't be blank .")
      */
     private $username;
     
@@ -42,6 +44,8 @@ abstract class BaseUser implements AdvancedUserInterface, \Serializable
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=64)
+     *
+     * @Assert\NotBlank(message="password can't be blank .")
      */
     private $password;
 
@@ -49,24 +53,35 @@ abstract class BaseUser implements AdvancedUserInterface, \Serializable
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=60, unique=true)
+     *
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = true
+     * )
      */
     private $email;
     /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, unique=true)
+     *
+     * @Assert\NotBlank(message="name can't be blank .")
      */
     private $name;
     /**
      * @var string
      *
      * @ORM\Column(name="surname", type="string", length=255, unique=true, nullable=false)
+     *
+     * @Assert\NotBlank(message="surname can't be blank .")
      */
     private $surname;
     /**
      * @var bool
      *
      * @ORM\Column(name="isActive", type="boolean", nullable=true, nullable=false)
+     *
+     * @Assert\NotBlank(message="username can't be blank .")
      */
     private $isActive;
 
@@ -76,6 +91,8 @@ abstract class BaseUser implements AdvancedUserInterface, \Serializable
      * @ORM\Column(name="roles", type="string", nullable=false, length=255,
      *     columnDefinition="ENUM('ROLE_USER', 'ROLE_TEAM', 'ROLE_OPERATOR', 'ROLE_ADMIN', 'ROLE_ROOT')",
      *     options={"default" = "ROLE_USER"})
+     *
+     * @Assert\NotBlank(message="roles can't be blank .")
      */
     private $roles;
     /**
