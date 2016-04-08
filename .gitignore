@@ -16,5 +16,3 @@
 /.idea
 composer-setup.php
 /nbproject/
-/web/bundles/uploads/avatars/*
-!/web/bundles/uploads/avatars/.gitkeep
