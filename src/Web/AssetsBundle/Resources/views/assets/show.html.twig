@@ -1,44 +1,36 @@
+{% extends 'WebAdminBundle::base.html.twig' %}
 
-
-{% block body %}
+{% block content_wrapper %}
     <h1>Assets</h1>
 
-    <table>
+    <table class="table table-bordered">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ asset.id }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>Asset name</th>
                 <td>{{ asset.title }}</td>
             </tr>
             <tr>
-                <th>Inventarynumber</th>
+                <th>Inventary number</th>
                 <td>{{ asset.inventaryNumber }}</td>
             </tr>
             <tr>
-                <th>Initialcost</th>
+                <th>Initial cost</th>
                 <td>{{ asset.initialcost }}</td>
             </tr>
             <tr>
-                <th>Replacementcost</th>
+                <th>Replacement cost</th>
                 <td>{{ asset.replacementcost }}</td>
             </tr>
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('assets_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('assets_edit', { 'id': asset.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+            <a class="btn btn-primary" href="{{ path('assets_index') }}">Back to the list</a>
+       
+            <a class="btn btn-info" href="{{ path('assets_edit', { 'id': asset.id }) }}">Edit</a>
+            <a class="btn btn-danger" href="{{ path('assets_delete', { 'id': asset.id }) }}">delete</a>
 {% endblock %}

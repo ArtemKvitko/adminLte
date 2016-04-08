@@ -55,11 +55,10 @@ class AssetsController extends Controller {
      *
      */
     public function showAction(Assets $asset) {
-        $deleteForm = $this->createDeleteForm($asset);
+
 
         return $this->render('WebAssetsBundle:Assets:show.html.twig', array(
-                    'asset' => $asset,
-                    'delete_form' => $deleteForm->createView(),
+                    'asset' => $asset
         ));
     }
 
@@ -68,7 +67,7 @@ class AssetsController extends Controller {
      *
      */
     public function editAction(Request $request, Assets $asset) {
-        $deleteForm = $this->createDeleteForm($asset);
+
         $editForm = $this->createForm('Web\AssetsBundle\Form\AssetsType', $asset);
         $editForm->handleRequest($request);
 
@@ -82,8 +81,7 @@ class AssetsController extends Controller {
 
         return $this->render('WebAssetsBundle:Assets:edit.html.twig', array(
                     'asset' => $asset,
-                    'edit_form' => $editForm->createView(),
-                    'delete_form' => $deleteForm->createView(),
+                    'edit_form' => $editForm->createView()
         ));
     }
 

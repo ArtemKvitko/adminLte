@@ -3,6 +3,7 @@
 namespace Web\AssetsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Assets
@@ -23,28 +24,34 @@ class Assets
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="title", type="string", length=32)
      */
     private $title;
     
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="inventaryNumber", type="string", length=32)
      */
     private $inventaryNumber;
 
     /**
-     * @var string
-     *
+     * @Assert\NotBlank()
+     * @Assert\Type(
+     *     type="numeric",
+     *     message="The value {{ value }} is not a valid {{ type }}."
+     * )
      * @ORM\Column(name="initialcost", type="decimal", precision=10, scale=2)
      */
     private $initialcost;
 
     /**
      * @var string
-     *
+     * @Assert\Type(
+     *     type="numeric",
+     *     message="The value {{ value }} is not a valid {{ type }}."
+     * )
      * @ORM\Column(name="replacementcost", type="decimal", precision=10, scale=2)
      */
     private $replacementcost;
