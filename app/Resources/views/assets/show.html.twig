@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Assets</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ asset.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ asset.title }}</td>
+            </tr>
+            <tr>
+                <th>Inventarynumber</th>
+                <td>{{ asset.inventaryNumber }}</td>
+            </tr>
+            <tr>
+                <th>Initialcost</th>
+                <td>{{ asset.initialcost }}</td>
+            </tr>
+            <tr>
+                <th>Replacementcost</th>
+                <td>{{ asset.replacementcost }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('assets_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('assets_edit', { 'id': asset.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

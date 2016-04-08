@@ -1,0 +1,24 @@
+assets_index:
+    path:     /
+    defaults: { _controller: "WebAssetsBundle:Assets:index" }
+    methods:  GET
+
+assets_show:
+    path:     /{id}/show
+    defaults: { _controller: "WebAssetsBundle:Assets:show" }
+    methods:  GET
+
+assets_new:
+    path:     /new
+    defaults: { _controller: "WebAssetsBundle:Assets:new" }
+    methods:  [GET, POST]
+
+assets_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WebAssetsBundle:Assets:edit" }
+    methods:  [GET, POST]
+
+assets_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WebAssetsBundle:Assets:delete" }
+    methods:  DELETE

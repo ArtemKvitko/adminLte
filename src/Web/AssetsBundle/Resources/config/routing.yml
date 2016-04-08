@@ -1,0 +1,4 @@
+web_assets_assets:
+    resource: "@WebAssetsBundle/Resources/config/routing/assets.yml"
+    prefix:   /assets
+

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Assets list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Inventarynumber</th>
+                <th>Initialcost</th>
+                <th>Replacementcost</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for asset in assets %}
+            <tr>
+                <td><a href="{{ path('assets_show', { 'id': asset.id }) }}">{{ asset.id }}</a></td>
+                <td>{{ asset.title }}</td>
+                <td>{{ asset.inventaryNumber }}</td>
+                <td>{{ asset.initialcost }}</td>
+                <td>{{ asset.replacementcost }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('assets_show', { 'id': asset.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('assets_edit', { 'id': asset.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('assets_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
