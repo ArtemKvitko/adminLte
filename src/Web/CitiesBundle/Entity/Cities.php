@@ -151,4 +151,8 @@ class Cities
     {
         return $this->user_id;
     }
+    
+    public function __toString() {
+        return $this->getName();
+    }
 }

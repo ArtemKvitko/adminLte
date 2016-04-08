@@ -93,19 +93,4 @@ class CitiesController extends Controller
         return $this->redirectToRoute('cities_index');
     }
 
-    /**
-     * Creates a form to delete a Cities entity.
-     *
-     * @param Cities $city The Cities entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Cities $city)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('cities_delete', array('id' => $city->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
-    }
 }

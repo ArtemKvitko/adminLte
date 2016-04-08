@@ -4,7 +4,6 @@ namespace Web\AssetsBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Web\AssetsBundle\Entity\Assets;
 use Web\AssetsBundle\Form\AssetsType;
 
@@ -12,20 +11,19 @@ use Web\AssetsBundle\Form\AssetsType;
  * Assets controller.
  *
  */
-class AssetsController extends Controller
-{
+class AssetsController extends Controller {
+
     /**
      * Lists all Assets entities.
      *
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
         $assets = $em->getRepository('WebAssetsBundle:Assets')->findAll();
 
-        return $this->render('assets/index.html.twig', array(
-            'assets' => $assets,
+        return $this->render('WebAssetsBundle:Assets:index.html.twig', array(
+                    'assets' => $assets,
         ));
     }
 
@@ -33,8 +31,7 @@ class AssetsController extends Controller
      * Creates a new Assets entity.
      *
      */
-    public function newAction(Request $request)
-    {
+    public function newAction(Request $request) {
         $asset = new Assets();
         $form = $this->createForm('Web\AssetsBundle\Form\AssetsType', $asset);
         $form->handleRequest($request);
@@ -47,9 +44,9 @@ class AssetsController extends Controller
             return $this->redirectToRoute('assets_show', array('id' => $asset->getId()));
         }
 
-        return $this->render('assets/new.html.twig', array(
-            'asset' => $asset,
-            'form' => $form->createView(),
+        return $this->render('WebAssetsBundle:Assets:new.html.twig', array(
+                    'asset' => $asset,
+                    'form' => $form->createView(),
         ));
     }
 
@@ -57,13 +54,12 @@ class AssetsController extends Controller
      * Finds and displays a Assets entity.
      *
      */
-    public function showAction(Assets $asset)
-    {
+    public function showAction(Assets $asset) {
         $deleteForm = $this->createDeleteForm($asset);
 
-        return $this->render('assets/show.html.twig', array(
-            'asset' => $asset,
-            'delete_form' => $deleteForm->createView(),
+        return $this->render('WebAssetsBundle:Assets:show.html.twig', array(
+                    'asset' => $asset,
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -71,8 +67,7 @@ class AssetsController extends Controller
      * Displays a form to edit an existing Assets entity.
      *
      */
-    public function editAction(Request $request, Assets $asset)
-    {
+    public function editAction(Request $request, Assets $asset) {
         $deleteForm = $this->createDeleteForm($asset);
         $editForm = $this->createForm('Web\AssetsBundle\Form\AssetsType', $asset);
         $editForm->handleRequest($request);
@@ -85,10 +80,10 @@ class AssetsController extends Controller
             return $this->redirectToRoute('assets_edit', array('id' => $asset->getId()));
         }
 
-        return $this->render('assets/edit.html.twig', array(
-            'asset' => $asset,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+        return $this->render('WebAssetsBundle:Assets:edit.html.twig', array(
+                    'asset' => $asset,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -96,33 +91,12 @@ class AssetsController extends Controller
      * Deletes a Assets entity.
      *
      */
-    public function deleteAction(Request $request, Assets $asset)
-    {
-        $form = $this->createDeleteForm($asset);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($asset);
-            $em->flush();
-        }
+    public function deleteAction(Request $request, Assets $asset) {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($asset);
+        $em->flush();
 
         return $this->redirectToRoute('assets_index');
     }
 
-    /**
-     * Creates a form to delete a Assets entity.
-     *
-     * @param Assets $asset The Assets entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Assets $asset)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('assets_delete', array('id' => $asset->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
-    }
 }

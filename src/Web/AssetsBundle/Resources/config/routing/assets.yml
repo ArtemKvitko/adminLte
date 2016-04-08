@@ -21,4 +21,4 @@ assets_edit:
 assets_delete:
     path:     /{id}/delete
     defaults: { _controller: "WebAssetsBundle:Assets:delete" }
-    methods:  DELETE
+    methods:  GET
