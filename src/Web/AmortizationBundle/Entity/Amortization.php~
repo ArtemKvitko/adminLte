@@ -160,27 +160,4 @@ class Amortization
     }
 
 
-
-    /**
-     * Set aset
-     *
-     * @param \Web\AssetsBundle\Entity\Assets $aset
-     * @return Amortization
-     */
-    public function setAset(\Web\AssetsBundle\Entity\Assets $aset = null)
-    {
-        $this->aset = $aset;
-
-        return $this;
-    }
-
-    /**
-     * Get aset
-     *
-     * @return \Web\AssetsBundle\Entity\Assets 
-     */
-    public function getAset()
-    {
-        return $this->aset;
-    }
 }
