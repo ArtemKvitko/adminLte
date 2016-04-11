@@ -26,8 +26,6 @@ class AmortizationType extends AbstractType {
                                         'class' => 'form-control')
                 ))
                 ->add('amortization', IntegerType::class, array('attr' => array('class' => 'form-control')))
-                ->add('createTime', DateTimeType::class)
-                ->add('updateTime', DateTimeType::class)
         ;
     }
 

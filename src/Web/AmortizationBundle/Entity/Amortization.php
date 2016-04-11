@@ -1,14 +1,12 @@
 <?php
-
 namespace Web\AmortizationBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Amortization
  *
  * @ORM\Table(name="amortization")
  * @ORM\Entity(repositoryClass="Web\AmortizationBundle\Repository\AmortizationRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Amortization
 {
@@ -20,53 +18,45 @@ class Amortization
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="period", type="date")
      */
     private $period;
-
-     /**
-     * 
+    /**
+     *
      * @ORM\ManyToOne(targetEntity="Web\AssetsBundle\Entity\Assets")
      * @ORM\JoinColumn(name="aset_id", referencedColumnName="id")
      */
     private $aset;
-
     /**
      * @var string
      *
      * @ORM\Column(name="amortization", type="decimal", precision=10, scale=0)
      */
     private $amortization;
-
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="create_time", type="datetime")
      */
     private $createTime;
-
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="update_time", type="datetime")
      */
     private $updateTime;
-
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
-
     /**
      * Set period
      *
@@ -76,20 +66,17 @@ class Amortization
     public function setPeriod($period)
     {
         $this->period = $period;
-
         return $this;
     }
-
     /**
      * Get period
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getPeriod()
     {
         return $this->period;
     }
-
     /**
      * Set amortization
      *
@@ -99,66 +86,56 @@ class Amortization
     public function setAmortization($amortization)
     {
         $this->amortization = $amortization;
-
         return $this;
     }
-
     /**
      * Get amortization
      *
-     * @return string 
+     * @return string
      */
     public function getAmortization()
     {
         return $this->amortization;
     }
-
     /**
      * Set createTime
      *
-     * @param \DateTime $createTime
-     * @return Amortization
+     * @ORM\PrePersist
+     *
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime()
     {
-        $this->createTime = $createTime;
-
-        return $this;
+        $this->createTime = new \DateTime();
+        $this->updateTime = new \DateTime();
     }
-
     /**
      * Get createTime
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreateTime()
     {
         return $this->createTime;
     }
-
     /**
      * Set updateTime
      *
-     * @param \DateTime $updateTime
-     * @return Amortization
+     * @ORM\PreUpdate
+     *
      */
-    public function setUpdateTime($updateTime)
+    public function setUpdateTime()
     {
-        $this->updateTime = $updateTime;
-
-        return $this;
+        $this->updateTime = new \DateTime();
     }
-
     /**
      * Get updateTime
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdateTime()
     {
         return $this->updateTime;
     }
-
     /**
      * Set aset
      *
@@ -168,14 +145,12 @@ class Amortization
     public function setAset(\Web\AssetsBundle\Entity\Assets $aset = null)
     {
         $this->aset = $aset;
-
         return $this;
     }
-
     /**
      * Get aset
      *
-     * @return \Web\AssetsBundle\Entity\Assets 
+     * @return \Web\AssetsBundle\Entity\Assets
      */
     public function getAset()
     {
