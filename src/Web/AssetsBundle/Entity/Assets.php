@@ -61,7 +61,14 @@ class Assets
      * @ORM\ManyToOne(targetEntity="Web\CitiesBundle\Entity\Cities")
      * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
      */
-    private $city_id;
+    private $city;
+    
+    /**
+     * 
+     * @ORM\ManyToOne(targetEntity="Web\AmortizationBundle\Entity\Categories")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $category;
 
 
     /**
