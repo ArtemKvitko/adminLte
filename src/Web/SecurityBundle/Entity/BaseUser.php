@@ -33,7 +33,7 @@ abstract class BaseUser implements AdvancedUserInterface, \Serializable
     private $username;
     
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      *
      * @Assert\NotBlank(message="Please, upload the product brochure as a JPEG file.")
      * @Assert\File(mimeTypes={ "image/jpeg" })
