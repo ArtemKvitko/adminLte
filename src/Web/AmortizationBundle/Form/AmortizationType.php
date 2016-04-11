@@ -6,7 +6,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -26,7 +25,7 @@ class AmortizationType extends AbstractType {
                                         'class' => 'WebAssetsBundle:Assets', 'attr' => array(
                                         'class' => 'form-control')
                 ))
-                ->add('amortization', MoneyType::class, array('attr' => array('class' => 'form-control')))
+                ->add('amortization', IntegerType::class, array('attr' => array('class' => 'form-control')))
                 ->add('createTime', DateTimeType::class)
                 ->add('updateTime', DateTimeType::class)
         ;
