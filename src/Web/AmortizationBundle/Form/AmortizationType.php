@@ -20,12 +20,12 @@ class AmortizationType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
                 ->add('period', DateType::class, array('attr' => array('class' => 'form-control')))
-                /*->add('aset', EntityType::class 
+                ->add('aset', EntityType::class 
                                     , array('required'=>false,
                                         'placeholder' => "Choose asset:", 
                                         'class' => 'WebAssetsBundle:Assets', 'attr' => array(
                                         'class' => 'form-control')
-                ))*/
+                ))
                 ->add('amortization', MoneyType::class, array('attr' => array('class' => 'form-control')))
                 ->add('createTime', DateTimeType::class)
                 ->add('updateTime', DateTimeType::class)
