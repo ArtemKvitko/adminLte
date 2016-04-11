@@ -36,6 +36,19 @@
         </tbody>
     </table>
 
-    <a href="{{ path('amortization_new') }}" class="btn btn-primary">Create a new entry</a>
+        <a href="{{ path('amortization_new') }}" class="btn btn-primary">Create a new entry</a></br>
+    
+    <select name="menu" size="1">
+        {% for amortization in amortizations %}
+<option value="period">{{amortization.period|date('Y-m-d')}}</option>
+{% endfor %}
+</select>
+
+<select name="menu1" size="1">
+        {% for amortization in amortizations %}
+<option value="title">{{ amortization.aset.title | default("Not Set") }}</option>
+{% endfor %}
+</select>
+<a href="{{ path('amortization_calc') }}" class="btn btn-primary">Calculate</a>
  
 {% endblock %}

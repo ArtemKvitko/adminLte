@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Web\AmortizationBundle\Entity\Amortization;
 use Web\AmortizationBundle\Form\AmortizationType;
+use \Web\AmortizationBundle\Entity\Categories;
 
 /**
  * Amortization controller.
@@ -138,5 +139,30 @@ class AmortizationController extends Controller
         ;*/
         
         return $this->generateUrl('amortization_delete', array('id' => $amortization->getId()));
+    }
+    
+       public function calcAction(Request $request)
+    {
+        
+        
+        
+       
+        $em = $this->getDoctrine()->getManager();
+        $amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->findAll();
+
+        $amortization_s = $em->getRepository('WebAmortizationBundle:Categories')->findAll();
+        
+        $cat = new Categories();
+        $cat->getUsefulTime();
+        var_dump($amortization_s);exit();
+                        
+        //echo rand(0, 111111).'<hr/>';
+        
+
+        return $this->render('WebAmortizationBundle:Amortization:index.html.twig', array(
+            'amortizations' => $amortizations
+        ));
+        
+        
     }
 }
