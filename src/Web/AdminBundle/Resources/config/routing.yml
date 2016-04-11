@@ -8,3 +8,19 @@ loyd_admin_homepage:
 web_admin_users:
     resource: "@WebAdminBundle/Resources/config/routing/user.yml"
     prefix:   /admin/users
+
+web_admin_zone:
+    resource: "@WebAdminBundle/Resources/config/routing/zone.yml"
+    prefix:   /admin/zone
+    
+web_admin_types:
+    resource: "@WebAdminBundle/Resources/config/routing/types.yml"
+    prefix:   /admin/types
+    
+web_admin_placeinstallation:
+    resource: "@WebAdminBundle/Resources/config/routing/placeinstallation.yml"
+    prefix:   /admin/placeinstallation
+    
+web_admin_counter:
+    resource: "@WebAdminBundle/Resources/config/routing/counter.yml"
+    prefix:   /admin/counter

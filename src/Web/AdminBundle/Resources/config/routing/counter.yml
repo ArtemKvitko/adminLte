@@ -1,0 +1,24 @@
+Admin_Counter_index:
+    path:     /
+    defaults: { _controller: "WebAdminBundle:Counter:index" }
+    methods:  GET
+
+Admin_Counter_show:
+    path:     /{id}/show
+    defaults: { _controller: "WebAdminBundle:Counter:show" }
+    methods:  GET
+
+Admin_Counter_new:
+    path:     /new
+    defaults: { _controller: "WebAdminBundle:Counter:new" }
+    methods:  [GET, POST]
+
+Admin_Counter_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WebAdminBundle:Counter:edit" }
+    methods:  [GET, POST]
+
+Admin_Counter_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WebAdminBundle:Counter:delete" }
+    methods:  DELETE

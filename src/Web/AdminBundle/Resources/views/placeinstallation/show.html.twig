@@ -1,0 +1,32 @@
+{% extends 'WebAdminBundle::base.html.twig' %}
+
+{% block content_wrapper %}
+    <h1>PlaceInstallation</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ placeInstallation.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ placeInstallation.title }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('Admin_PlaceInstallation_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('Admin_PlaceInstallation_edit', { 'id': placeInstallation.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
