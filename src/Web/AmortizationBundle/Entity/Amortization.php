@@ -159,8 +159,6 @@ class Amortization
         return $this->updateTime;
     }
 
-
-
     /**
      * Set aset
      *

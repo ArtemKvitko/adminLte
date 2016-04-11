@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <th>Asetid</th>
-                <td>{{ amortization.asetId }}</td>
+                <td>{{ amortization.aset.id | default("Not Set") }}</td>
             </tr>
             <tr>
                 <th>Amortization</th>

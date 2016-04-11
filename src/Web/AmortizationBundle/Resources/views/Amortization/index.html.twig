@@ -20,7 +20,7 @@
             <tr>
                 <td><a href="{{ path('amortization_show', { 'id': amortization.id }) }}">{{ amortization.id }}</a></td>
                 <td>{% if amortization.period %}{{ amortization.period|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ amortization.asetId.id | default("Not Set") }}</td>
+                <td>{{ amortization.aset.id | default("Not Set") }}</td>
                 <td>{{ amortization.amortization }}</td>
                 <td>{% if amortization.createTime %}{{ amortization.createTime|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if amortization.updateTime %}{{ amortization.updateTime|date('Y-m-d H:i:s') }}{% endif %}</td>
