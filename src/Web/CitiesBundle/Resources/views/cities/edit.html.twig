@@ -6,7 +6,7 @@
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-       <p> <input class="btn btn-info" type="submit" value="Edit" />
+       <p> <input class="btn btn-info" type="submit" value="Save" />
  <a class="btn btn-primary" href="{{ path('cities_index') }}">Back to the list</a>
  <a class="btn btn-danger" href="{{ path('cities_delete', {'id': city.id}) }}">Delete</a>
     {{ form_end(edit_form) }}
