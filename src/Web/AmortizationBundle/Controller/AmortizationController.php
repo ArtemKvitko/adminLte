@@ -24,9 +24,13 @@ class AmortizationController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->findAll();        
+<<<<<<< HEAD
+                
+=======
         
         //echo rand(0, 111111).'<hr/>';
 
+>>>>>>> b3485d40b9b6c19a499a11fb766434a6f4f1069a
         return $this->render('WebAmortizationBundle:Amortization:index.html.twig', array(
             'amortizations' => $amortizations,
         ));
@@ -77,6 +81,9 @@ class AmortizationController extends Controller
      */
     public function editAction(Request $request, Amortization $amortization)
     {
+        //echo $amortization->id;
+        //exit();
+        
         $editForm = $this->createForm('Web\AmortizationBundle\Form\AmortizationType', $amortization);
         $editForm->handleRequest($request);
 
