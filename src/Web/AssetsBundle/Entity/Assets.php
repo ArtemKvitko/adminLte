@@ -59,7 +59,7 @@ class Assets
     /**
      * 
      * @ORM\ManyToOne(targetEntity="Web\CitiesBundle\Entity\Cities")
-     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="city", referencedColumnName="id")
      */
     private $city;
     
@@ -220,25 +220,48 @@ class Assets
     }
 
     /**
-     * Set city_id
+     * Set city
      *
-     * @param \Web\CitiesBundle\Entity\Cities $cityId
+     * @param \Web\CitiesBundle\Entity\Cities $city
      * @return Assets
      */
-    public function setCityId(\Web\CitiesBundle\Entity\Cities $cityId = null)
+    public function setCity(\Web\CitiesBundle\Entity\Cities $city = null)
     {
-        $this->city_id = $cityId;
+        $this->city = $city;
 
         return $this;
     }
 
     /**
-     * Get city_id
+     * Get city
      *
      * @return \Web\CitiesBundle\Entity\Cities 
      */
-    public function getCityId()
+    public function getCity()
     {
-        return $this->city_id;
+        return $this->city;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \Web\AmortizationBundle\Entity\Categories $category
+     * @return Assets
+     */
+    public function setCategory(\Web\AmortizationBundle\Entity\Categories $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \Web\AmortizationBundle\Entity\Categories 
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }

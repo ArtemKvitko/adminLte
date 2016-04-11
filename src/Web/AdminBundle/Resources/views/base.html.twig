@@ -344,28 +344,68 @@
                         </li>
                         <li>
                             <a href="{{ path('admin_users_index') }}">
-                                <i class="fa fa-book"></i> <span>User crud</span> <i class="fa fa-angle-left pull-right"></i>
+                                <i class="fa fa-book"></i> <span>User control</span> <i class="fa fa-angle-left pull-right"></i>
                             </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('admin_users_new')}}"><i class="fa fa-circle-o"></i> Create user</a></li>
+
+                            </ul>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('admin_users_index')}}"><i class="fa fa-circle-o"></i> User List</a></li>
+
+                            </ul>
                         </li>
                         <li>
                             <a href="{{ path('amortization_index') }}">
                                 <i class="fa fa-table"></i> <span>Amortization</span> <i class="fa fa-angle-left pull-right"></i>
-                            </a>  
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('amortization_new')}}"><i class="fa fa-circle-o"></i> Create </a></li>
+
+                            </ul>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('amortization_index')}}"><i class="fa fa-circle-o"></i>  List</a></li>
+
+                            </ul>
                         </li> 
                         <li>
                             <a href="{{ path('categories_index') }}">
                                 <i class="fa fa-table"></i> <span>Amortization categories</span> <i class="fa fa-angle-left pull-right"></i>
-                            </a> 
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('categories_new')}}"><i class="fa fa-circle-o"></i> Create </a></li>
+
+                            </ul>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('categories_index')}}"><i class="fa fa-circle-o"></i>  List</a></li>
+
+                            </ul>
                         </li> 
                         <li>
                             <a href="{{ path('cities_index') }}">
                                 <i class="fa fa-table"></i> <span>Cities control</span> <i class="fa fa-angle-left pull-right"></i>
-                            </a> 
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('cities_new')}}"><i class="fa fa-circle-o"></i> Create </a></li>
+
+                            </ul>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('cities_index')}}"><i class="fa fa-circle-o"></i>  List</a></li>
+
+                            </ul>
                         </li>
                         <li>
                             <a href="{{ path('assets_index') }}">
                                 <i class="fa fa-table"></i> <span>Assets control</span> <i class="fa fa-angle-left pull-right"></i>
-                            </a> 
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('assets_new')}}"><i class="fa fa-circle-o"></i> Create </a></li>
+
+                            </ul>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('assets_index')}}"><i class="fa fa-circle-o"></i>  List</a></li>
+
+                            </ul>
                         </li>
 
                     </ul>
