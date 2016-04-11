@@ -121,4 +121,7 @@ class Categories
     {
         return $this->usefulTime;
     }
+    public function __toString() {
+        return $this->getTitle();
+    }
 }
