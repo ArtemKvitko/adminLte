@@ -1,0 +1,16 @@
+{% extends 'WebAdminBundle::base.html.twig' %}
+
+{% block content_wrapper %}
+    <h1>PlaceInstallation creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('Admin_PlaceInstallation_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+Admin_PlaceInstallation_index:
+    path:     /
+    defaults: { _controller: "WebAdminBundle:PlaceInstallation:index" }
+    methods:  GET
+
+Admin_PlaceInstallation_show:
+    path:     /{id}/show
+    defaults: { _controller: "WebAdminBundle:PlaceInstallation:show" }
+    methods:  GET
+
+Admin_PlaceInstallation_new:
+    path:     /new
+    defaults: { _controller: "WebAdminBundle:PlaceInstallation:new" }
+    methods:  [GET, POST]
+
+Admin_PlaceInstallation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WebAdminBundle:PlaceInstallation:edit" }
+    methods:  [GET, POST]
+
+Admin_PlaceInstallation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WebAdminBundle:PlaceInstallation:delete" }
+    methods:  DELETE

@@ -1,0 +1,24 @@
+Admin_Types_index:
+    path:     /
+    defaults: { _controller: "WebAdminBundle:Types:index" }
+    methods:  GET
+
+Admin_Types_show:
+    path:     /{id}/show
+    defaults: { _controller: "WebAdminBundle:Types:show" }
+    methods:  GET
+
+Admin_Types_new:
+    path:     /new
+    defaults: { _controller: "WebAdminBundle:Types:new" }
+    methods:  [GET, POST]
+
+Admin_Types_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WebAdminBundle:Types:edit" }
+    methods:  [GET, POST]
+
+Admin_Types_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WebAdminBundle:Types:delete" }
+    methods:  DELETE
