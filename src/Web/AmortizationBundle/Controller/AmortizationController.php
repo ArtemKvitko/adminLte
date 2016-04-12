@@ -22,14 +22,22 @@ class AmortizationController extends Controller
     //
     public function indexAction()
     {
+        //echo rand(11, 23424234);
+        
         $em = $this->getDoctrine()->getManager();
 
         $amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->findAll();        
+                    
+        foreach ($amortizations as $val) {
                         
-        //echo rand(0, 111111).'<hr/>';
+            $aset = empty($val->getAset()) ? "" : $val->getAset()->getTitle();            
+            $arr_period[$val->getPeriod()->format('Y-m-d')][$aset] = "";
+        }
+        
 
         return $this->render('WebAmortizationBundle:Amortization:index.html.twig', array(
             'amortizations' => $amortizations,
+            'arr_period' => $arr_period
         ));
         
         
@@ -144,7 +152,18 @@ class AmortizationController extends Controller
        public function calcAction(Request $request)
     {
         
+        $row = $request->get('menu');
         
+        if (empty($row)) {
+            return $this->redirectToRoute('amortization_index');
+        }
+        
+        $arr = explode("::", $row);
+        if (Count($arr) < 2) {
+            return $this->redirectToRoute('amortization_index');
+        }
+        
+        var_dump($arr);exit();
         
        
         $em = $this->getDoctrine()->getManager();
@@ -152,8 +171,7 @@ class AmortizationController extends Controller
 
         $amortization_s = $em->getRepository('WebAmortizationBundle:Categories')->findAll();
         
-        $row = $request->get('menu');
-                var_dump($row);exit();
+        
                         
         //echo rand(0, 111111).'<hr/>';
         
