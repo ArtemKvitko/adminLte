@@ -152,9 +152,8 @@ class AmortizationController extends Controller
 
         $amortization_s = $em->getRepository('WebAmortizationBundle:Categories')->findAll();
         
-        $cat = new Categories();
-        $cat->getUsefulTime();
-        var_dump($amortization_s);exit();
+        $row = $request->get('menu');
+                var_dump($row);exit();
                         
         //echo rand(0, 111111).'<hr/>';
         
