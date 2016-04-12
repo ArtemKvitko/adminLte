@@ -23,23 +23,18 @@
                 <td>{{ counter.number }}</td>
                 <td>{{ counter.numberDigits }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('Admin_Counter_show', { 'id': counter.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('Admin_Counter_edit', { 'id': counter.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    
+                            <a class="btn btn-block btn-success btn-sm" href="{{ path('Admin_Counter_show', { 'id': counter.id }) }}">show</a>
+                        
+                            <a class="btn btn-block btn-danger btn-sm" href="{{ path('Admin_Counter_edit', { 'id': counter.id }) }}">edit</a>
+                       
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('Admin_Counter_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    
+            <a class="btn btn-primary" href="{{ path('Admin_Counter_new') }}">Create a new entry</a>
+      
 {% endblock %}
