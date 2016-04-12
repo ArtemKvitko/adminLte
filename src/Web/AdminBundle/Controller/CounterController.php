@@ -42,6 +42,8 @@ class CounterController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($counter);
+            $counter->setCreated(new \DateTime(Date("Y-m-d H:i:s", time())));
+            $counter->setUpdated(new \DateTime(Date("Y-m-d H:i:s", time())));
             $em->flush();
 
             return $this->redirectToRoute('Admin_Counter_show', array('id' => $counter->getId()));
@@ -79,6 +81,7 @@ class CounterController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $counter->setUpdated(new \DateTime(Date("Y-m-d H:i:s", time())));
             $em->persist($counter);
             $em->flush();
 

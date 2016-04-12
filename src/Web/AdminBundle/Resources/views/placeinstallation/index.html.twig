@@ -17,23 +17,18 @@
                 <td><a href="{{ path('Admin_PlaceInstallation_show', { 'id': placeInstallation.id }) }}">{{ placeInstallation.id }}</a></td>
                 <td>{{ placeInstallation.title }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('Admin_PlaceInstallation_show', { 'id': placeInstallation.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('Admin_PlaceInstallation_edit', { 'id': placeInstallation.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                   
+                            <a class="btn btn-block btn-success btn-sm" href="{{ path('Admin_PlaceInstallation_show', { 'id': placeInstallation.id }) }}">show</a>
+                        
+                            <a class="btn btn-block btn-danger btn-sm" href="{{ path('Admin_PlaceInstallation_edit', { 'id': placeInstallation.id }) }}">edit</a>
+                       
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('Admin_PlaceInstallation_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    
+            <a class="btn btn-primary" href="{{ path('Admin_PlaceInstallation_new') }}">Create a new entry</a>
+     
 {% endblock %}

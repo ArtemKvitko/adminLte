@@ -17,23 +17,18 @@
                 <td><a href="{{ path('Admin_Zone_show', { 'id': zone.id }) }}">{{ zone.id }}</a></td>
                 <td>{{ zone.title }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('Admin_Zone_show', { 'id': zone.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('Admin_Zone_edit', { 'id': zone.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    
+                            <a class="btn btn-block btn-success btn-sm" href="{{ path('Admin_Zone_show', { 'id': zone.id }) }}">show</a>
+                        
+                            <a class="btn btn-block btn-danger btn-sm" href="{{ path('Admin_Zone_edit', { 'id': zone.id }) }}">edit</a>
+                     
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('Admin_Zone_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    
+            <a class="btn btn-primary" href="{{ path('Admin_Zone_new') }}">Create a new entry</a>
+       
 {% endblock %}

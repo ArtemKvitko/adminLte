@@ -20,10 +20,10 @@ class CounterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('created', DateTimeType::class)
-            ->add('updated', DateTimeType::class)
-            ->add('number', IntegerType::class)
-            ->add('numberDigits', IntegerType::class)
+//            ->add('created', DateTimeType::class)
+//            ->add('updated', DateTimeType::class)
+            ->add('number', IntegerType::class, array('attr' => array('class' => 'form-control')))
+            ->add('numberDigits', IntegerType::class , array('attr' => array('class' => 'form-control')))
         ;
     }
     
