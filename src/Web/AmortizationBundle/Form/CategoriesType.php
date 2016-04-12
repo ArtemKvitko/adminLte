@@ -8,7 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 
 class CategoriesType extends AbstractType
@@ -22,7 +22,7 @@ class CategoriesType extends AbstractType
         $builder
             ->add('sabNumber', IntegerType::class, array('attr' => array('class' => 'form-control')))
             ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('usefulTime', TimeType::class)
+            ->add('usefulTime', DateTimeType::class)
         ;
     }
     
