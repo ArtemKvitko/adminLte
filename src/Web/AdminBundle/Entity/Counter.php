@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="counter")
  * @ORM\Entity(repositoryClass="Web\AdminBundle\Repository\CounterRepository")
+ * @ORM\HasLifecycleCallbacks() 
  */
 class Counter
 {
@@ -62,18 +63,21 @@ class Counter
 
     /**
      * Set created
-     *
+     * @ORM\PrePersist 
      * @param \DateTime $created
      * @return Counter
      */
     public function setCreated($created)
     {
-        $this->created = $created;
-
-        return $this;
+   
+   
+        $this->created = new \DateTime();  
+        $this->updated = new \DateTime(); 
     }
-
-    /**
+    
+    
+    
+  /**
      * Get created
      *
      * @return \DateTime 
@@ -85,17 +89,18 @@ class Counter
 
     /**
      * Set updated
-     *
+     * @ORM\PreUpdate 
      * @param \DateTime $updated
      * @return Counter
      */
     public function setUpdated($updated)
     {
-        $this->updated = $updated;
+      
+ $this->updated = new \DateTime();  
 
         return $this;
     }
-
+    
     /**
      * Get updated
      *
