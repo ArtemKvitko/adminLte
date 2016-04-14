@@ -82,7 +82,7 @@ class PlaceInstallationController extends Controller
             $em->persist($placeInstallation);
             $em->flush();
 
-            return $this->redirectToRoute('Admin_PlaceInstallation_edit', array('id' => $placeInstallation->getId()));
+            return $this->redirectToRoute('Admin_PlaceInstallation_index', array('id' => $placeInstallation->getId()));
         }
 
         return $this->render('WebAdminBundle:PlaceInstallation:edit.html.twig', array(

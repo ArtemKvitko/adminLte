@@ -20,10 +20,15 @@ class CounterController extends Controller
      */
     public function indexAction()
     {
+       
         $em = $this->getDoctrine()->getManager();
 
         $counters = $em->getRepository('WebAdminBundle:Counter')->findAll();
-
+        
+//        var_dump($counters);
+//        echo '<pre>';
+//        exit();
+        
         return $this->render('WebAdminBundle:Counter:index.html.twig', array(
             'counters' => $counters,
         ));
@@ -85,7 +90,7 @@ class CounterController extends Controller
             $em->persist($counter);
             $em->flush();
 
-            return $this->redirectToRoute('Admin_Counter_edit', array('id' => $counter->getId()));
+            return $this->redirectToRoute('Admin_Counter_index', array('id' => $counter->getId()));
         }
 
         return $this->render('WebAdminBundle:Counter:edit.html.twig', array(

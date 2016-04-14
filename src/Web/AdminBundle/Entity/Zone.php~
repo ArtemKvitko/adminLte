@@ -5,12 +5,12 @@ namespace Web\AdminBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * PlaceInstallation
+ * Zone
  *
- * @ORM\Table(name="place_installation")
- * @ORM\Entity(repositoryClass="Web\AdminBundle\Repository\PlaceInstallationRepository")
+ * @ORM\Table(name="zone")
+ * @ORM\Entity(repositoryClass="Web\AdminBundle\Repository\ZoneRepository")
  */
-class PlaceInstallation
+class Zone
 {
     /**
      * @var int
@@ -21,8 +21,7 @@ class PlaceInstallation
      */
     private $id;
     
-    
-   /**
+    /**
      * @ORM\ManyToOne(targetEntity="Counter")
      * @ORM\JoinColumn(name="counter_id", referencedColumnName="id")
      */
@@ -50,7 +49,7 @@ class PlaceInstallation
      * Set title
      *
      * @param string $title
-     * @return PlaceInstallation
+     * @return Zone
      */
     public function setTitle($title)
     {
@@ -67,28 +66,5 @@ class PlaceInstallation
     public function getTitle()
     {
         return $this->title;
-    }
-
-    /**
-     * Set counter
-     *
-     * @param \Web\AdminBundle\Entity\Counter $counter
-     * @return PlaceInstallation
-     */
-    public function setCounter(\Web\AdminBundle\Entity\Counter $counter = null)
-    {
-        $this->counter = $counter;
-
-        return $this;
-    }
-
-    /**
-     * Get counter
-     *
-     * @return \Web\AdminBundle\Entity\Counter 
-     */
-    public function getCounter()
-    {
-        return $this->counter;
     }
 }

@@ -82,7 +82,7 @@ class TypesController extends Controller
             $em->persist($type);
             $em->flush();
 
-            return $this->redirectToRoute('Admin_Types_edit', array('id' => $type->getId()));
+            return $this->redirectToRoute('Admin_Types_index', array('id' => $type->getId()));
         }
 
         return $this->render('WebAdminBundle:Types:edit.html.twig', array(

@@ -20,6 +20,12 @@ class Zone
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Counter")
+     * @ORM\JoinColumn(name="counter_id", referencedColumnName="id")
+     */
+    private $counter;
 
     /**
      * @var string
@@ -60,5 +66,28 @@ class Zone
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Set counter
+     *
+     * @param \Web\AdminBundle\Entity\Counter $counter
+     * @return Zone
+     */
+    public function setCounter(\Web\AdminBundle\Entity\Counter $counter = null)
+    {
+        $this->counter = $counter;
+
+        return $this;
+    }
+
+    /**
+     * Get counter
+     *
+     * @return \Web\AdminBundle\Entity\Counter 
+     */
+    public function getCounter()
+    {
+        return $this->counter;
     }
 }

@@ -68,27 +68,4 @@ class PlaceInstallation
     {
         return $this->title;
     }
-
-    /**
-     * Set counter
-     *
-     * @param \Web\AdminBundle\Entity\Counter $counter
-     * @return PlaceInstallation
-     */
-    public function setCounter(\Web\AdminBundle\Entity\Counter $counter = null)
-    {
-        $this->counter = $counter;
-
-        return $this;
-    }
-
-    /**
-     * Get counter
-     *
-     * @return \Web\AdminBundle\Entity\Counter 
-     */
-    public function getCounter()
-    {
-        return $this->counter;
-    }
 }

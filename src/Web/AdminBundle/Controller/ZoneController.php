@@ -82,7 +82,7 @@ class ZoneController extends Controller
             $em->persist($zone);
             $em->flush();
 
-            return $this->redirectToRoute('Admin_Zone_edit', array('id' => $zone->getId()));
+            return $this->redirectToRoute('Admin_Zone_index', array('id' => $zone->getId()));
         }
 
         return $this->render('WebAdminBundle:Zone:edit.html.twig', array(
