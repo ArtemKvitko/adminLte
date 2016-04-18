@@ -1,0 +1,33 @@
+{% extends 'WebAdminBundle::base.html.twig' %}
+
+{% block content_wrapper %}
+    <h1>Array Lengs {{amortizations|length}}</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                {% for key, vars in amortizations[0]|ObjToArray %}
+                    <th>{{key}}</th>
+                    {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for amortization in amortizations %}
+                <tr>
+                    {% for key, vars in amortization|ObjToArray %}
+                        <th>
+                            {{key}} <br/>
+                            {{vars|MyToStr|raw}}
+                        </th>
+                    {% endfor %}
+                   
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+{% block amortization %} class="active treeview" {% endblock  %}
+{% block amortization_index %}class="active" {% endblock %}

@@ -1,3 +1,8 @@
+amortization_dql:
+    path:     /dql
+    defaults: { _controller: "WebAmortizationBundle:Amortization:dql" }
+    methods:  GET
+
 amortization_index:
     path:     /
     defaults: { _controller: "WebAmortizationBundle:Amortization:index" }

@@ -21,11 +21,28 @@ class AmortizationController extends Controller {
      *
      */
     //
+
+    public function dqlAction() {
+        echo rand(11, 23424234) . '<hr/> dql<br/>';
+
+                
+        $em = $this->getDoctrine()->getManager();
+
+        //$amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->getAmortizationsByAsertIdAlgTwo(5);
+        $amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->getAllOderByPeriodDesc();
+        
+        //echo Count($amortizations);
+        //exit();
+ 
+        return $this->render('WebAmortizationBundle:Amortization:dql.html.twig', array(
+                    'amortizations' => $amortizations,                    
+        ));
+    }
+
     public function indexAction() {
         //echo rand(11, 23424234);
-
         //echo $translated = $this->get('translator')->trans('Symfony is great');
-        
+
         $em = $this->getDoctrine()->getManager();
 
         $amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->findAll();
@@ -155,35 +172,35 @@ class AmortizationController extends Controller {
         if (Count($arr) < 2) {
             return $this->redirectToRoute('amortization_index');
         }
-        
+
         $em = $this->getDoctrine()->getManager();
         $as = $em->getRepository('WebAssetsBundle:Assets')->findOneByTitle($arr[1]);
         $qwy = $as->getInitialcost();
-       //var_dump($qwy);
+        //var_dump($qwy);
         $as1 = $em->getRepository('WebAssetsBundle:Assets')->findOneByTitle($arr[1]);
         $gt = $as1->getCategory()->__toString();
         //echo $gt;
         $as2 = $em->getRepository('WebAmortizationBundle:Categories')->findOneByTitle($gt);
         $rts = $as2->getUsefulTime();
         //echo $rts;
-         
-        $a=$arr[0];
+
+        $a = $arr[0];
         //$ab =(date($a));
         $d = new \DateTime($a);
         $as3 = $em->getRepository('WebAmortizationBundle:Amortization')->findOneByPeriod($d);
-        $wer =$as3->getAmortization();
-        if($wer==0){
-            $er =(int)$qwy;
-        $a=$er/$rts/4;
-        $b = (int)$a;
-        $wer =$as3->setAmortization($b);
-        $em->persist($as3);
-        $em->flush();
-        return $this->redirectToRoute('amortization_index');
-        }else{
+        $wer = $as3->getAmortization();
+        if ($wer == 0) {
+            $er = (int) $qwy;
+            $a = $er / $rts / 4;
+            $b = (int) $a;
+            $wer = $as3->setAmortization($b);
+            $em->persist($as3);
+            $em->flush();
+            return $this->redirectToRoute('amortization_index');
+        } else {
             return $this->redirectToRoute('amortization_index');
         }
-          
+
         $amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->findAll();
         $amortization_s = $em->getRepository('WebAmortizationBundle:Categories')->findAll();
 
