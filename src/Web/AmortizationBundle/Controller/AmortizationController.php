@@ -24,6 +24,8 @@ class AmortizationController extends Controller {
     public function indexAction() {
         //echo rand(11, 23424234);
 
+        //echo $translated = $this->get('translator')->trans('Symfony is great');
+        
         $em = $this->getDoctrine()->getManager();
 
         $amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->findAll();
