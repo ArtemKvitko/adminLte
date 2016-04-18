@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>AdminLTE 2 | Daboard</title>
+        <title>AdminLTE 2 | Dashboard</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         {% block stylesheets %}
@@ -333,7 +333,15 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="header">MAIN NAVIGATION</li>
+                        <li class=" treeview">
+                            <a href="#">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li ><a href="{{ path('loyd_admin_homepage')}}"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
 
+                            </ul>
+                        </li>
 
                         <li {% block user %}class="treeview" {% endblock %} >
                             <a href="{{ path('admin_users_index') }}">
