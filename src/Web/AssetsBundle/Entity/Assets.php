@@ -87,23 +87,25 @@ class Assets
      * @param string $name
      * @return Assets
      */
+    /*
     public function setName($name)
     {
         $this->name = $name;
 
         return $this;
     }
-
+    */
     /**
      * Get name
      *
      * @return string 
      */
+    /*
     public function getName()
     {
         return $this->name;
     }
-
+    */
     /**
      * Set initialcost
      *
@@ -156,22 +158,24 @@ class Assets
      * @param integer $location
      * @return Assets
      */
+    /*
     public function setLocation($location)
     {
         $this->location = $location;
 
         return $this;
-    }
+    }*/
 
     /**
      * Get location
      *
      * @return integer 
      */
+    /*
     public function getLocation()
     {
         return $this->location;
-    }
+    }*/
 
     /**
      * Set title

@@ -3,7 +3,7 @@
 {% block content_wrapper %}
      <div class="box box-success">
         <div class="box-header">
-             <h1>Assets list</h1>
+             <h1>{% trans %}Assets list{% endtrans %}</h1>
         </div>
         <div class="box-body">
        
@@ -11,12 +11,12 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Asset name</th>
-                <th>Inventary number</th>
-                <th>Initial cost</th>
-                <th>Replacement cost</th>
-                <th>Actions</th>
+                <th>{% trans %}Id{% endtrans %}</th>
+                <th>{% trans %}Asset name{% endtrans %}</th>
+                <th>{% trans %}Inventary number{% endtrans %}</th>
+                <th>{% trans %}Initial cost{% endtrans %}</th>
+                <th>{% trans %}Replacement cost{% endtrans %}</th>
+                <th>{% trans %}Actions{% endtrans %}</th>
             </tr>
         </thead>
         <tbody>
@@ -29,9 +29,9 @@
                 <td>{{ asset.replacementcost }}</td>
                 <td>
                     
-                            <a class="btn btn-block btn-primary" href="{{ path('assets_show', { 'id': asset.id }) }}">show</a>
+                            <a class="btn btn-block btn-primary" href="{{ path('assets_show', { 'id': asset.id }) }}">{% trans %}show{% endtrans %}</a>
                       
-                            <a class="btn btn-block btn-danger btn-sm" href="{{ path('assets_edit', { 'id': asset.id }) }}">edit</a>
+                            <a class="btn btn-block btn-danger btn-sm" href="{{ path('assets_edit', { 'id': asset.id }) }}">{% trans %}edit{% endtrans %}</a>
                             
                 </td>
             </tr>
@@ -40,7 +40,7 @@
     </table>
 
     
-            <a class="btn btn-primary" href="{{ path('assets_new') }}">Create a new entry</a>
+            <a class="btn btn-primary" href="{{ path('assets_new') }}">{% trans %}Create a new entry{% endtrans %}</a>
       </div>
 </div>
 {% endblock %}
