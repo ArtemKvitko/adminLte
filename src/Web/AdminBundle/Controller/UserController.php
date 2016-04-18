@@ -23,9 +23,10 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $user = $em->getRepository('WebSecurityBundle:User')->findAll();
-
+        $translated = $this->get('translator')->trans('Hello');
         return $this->render('WebAdminBundle:User:index.html.twig', array(
             'Users' => $user,
+            'trans'=>$translated,
         ));
     }
 
