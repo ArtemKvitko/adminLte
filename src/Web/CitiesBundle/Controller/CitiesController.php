@@ -20,13 +20,24 @@ class CitiesController extends Controller
      */
     public function indexAction()
     {
+        
+        
+        $translated = $this->get('translator')->trans('Common text');
+        
+        
         $em = $this->getDoctrine()->getManager();
 
         $cities = $em->getRepository('WebCitiesBundle:Cities')->findAll();
 
         return $this->render('WebCitiesBundle:cities:index.html.twig', array(
             'cities' => $cities,
+            'translated'=>$translated,
         ));
+        
+
+
+
+
     }
 
     /**

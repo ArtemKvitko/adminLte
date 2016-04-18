@@ -1,7 +1,10 @@
 cities_index:
-    path:     /
-    defaults: { _controller: "WebCitiesBundle:Cities:index" }
+    
+    path:     /{_locale}
+    defaults: { _controller: "WebCitiesBundle:Cities:index"}
     methods:  GET
+    requirements:
+        _locale: en|fr|ua
 
 cities_new:
     path:     /new

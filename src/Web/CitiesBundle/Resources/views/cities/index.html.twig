@@ -1,22 +1,23 @@
 {% extends 'WebAdminBundle::base.html.twig' %}
 
 {% block content_wrapper %}
+{{ translated }}
  {{ parent() }}
     <div class="box box-success">
         <div class="box-header">
             <h3 class="box-title">Cities</h3>
         </div>
         <div class="box-body">
-        <h1>Cities list</h1>
+        <h1>{% trans %}Cities list{% endtrans %}</h1>
 
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Postalcode</th>
-                <th>Country</th>
-                <th>Actions</th>
+                <th>{% trans %}Name{% endtrans %}</th>
+                <th>{% trans %}Postalcode{% endtrans %}</th>
+                <th>{% trans %}Country{% endtrans %}</th>
+                <th>{% trans %}Actions{% endtrans %}</th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +26,7 @@
                 <td>{{ city.id }}</td>
                 <td>{{ city.name }}</td>
                 <td>{{ city.postalcode }}</td>
-                <td>{{ city.country }}</td>
+                <td>{{ city.country |trans}}</td>
                 <td>
                            
                             <a class="btn btn-block btn-danger btn-sm" href="{{ path('cities_edit', { 'id': city.id }) }}">edit</a>
