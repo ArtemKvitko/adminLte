@@ -22,3 +22,8 @@ amortization_delete:
     path:     /{id}/delete
     defaults: { _controller: "WebAmortizationBundle:Amortization:delete" }
     methods:  GET
+    
+amortization_calc:
+    path:     /cal
+    defaults: { _controller: "WebAmortizationBundle:Amortization:calc" }
+    methods:  POST

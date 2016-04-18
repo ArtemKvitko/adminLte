@@ -19,7 +19,7 @@
                 <td><a href="{{ path('categories_show', { 'id': category.id }) }}">{{ category.id }}</a></td>
                 <td>{{ category.sabNumber }}</td>
                 <td>{{ category.title }}</td>
-                <td>{% if category.usefulTime %}{{ category.usefulTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if category.usefulTime %}{{ category.usefulTime}}{% endif %}</td>
                 <td>
                     
                             <a class="btn btn-block btn-success btn-sm" href="{{ path('categories_show', { 'id': category.id }) }}">show</a>
@@ -36,3 +36,5 @@
             <a href="{{ path('categories_new') }}" class="btn btn-primary">Create a new entry</a>
         
 {% endblock %}
+{% block amortization_categories %} class="active treeview" {% endblock  %}
+{% block amortization_categories_index %}class="active" {% endblock %}

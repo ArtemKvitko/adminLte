@@ -1,0 +1,36 @@
+{% extends 'WebAdminBundle::base.html.twig' %}
+
+{% block content_wrapper %}
+    <h1>Types list</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type in types %}
+            <tr>
+                <td><a href="{{ path('Admin_Types_show', { 'id': type.id }) }}">{{ type.id }}</a></td>
+                <td>{{ type.title }}</td>
+                <td>
+                    
+                        
+                        <a class="btn btn-block btn-success btn-sm" href="{{ path('Admin_Types_show', { 'id': type.id }) }}">show</a>
+                            
+                        <a class="btn btn-block btn-danger btn-sm" href="{{ path('Admin_Types_edit', { 'id': type.id }) }}">edit</a>
+                        
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+            <a class="btn btn-primary" href="{{ path('Admin_Types_new') }}">Create a new entry</a>
+            
+    
+{% endblock %}

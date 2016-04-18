@@ -349,29 +349,29 @@
                             </ul>
                         </li>
 
-                        <li>
+                        <li {% block amortization %}class="treeview" {% endblock %}>
                             <a href="{{ path('amortization_index') }}">
                                 <i class="fa fa-table"></i> <span>Amortization</span> <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li ><a href="{{ path('amortization_new')}}"><i class="fa fa-circle-o"></i> Create </a></li>
+                                <li {% block amortization_new %} {% endblock %}><a href="{{ path('amortization_new')}}"><i class="fa fa-circle-o"></i> Create </a></li>
 
                             </ul>
                             <ul class="treeview-menu">
-                                <li ><a href="{{ path('amortization_index')}}"><i class="fa fa-circle-o"></i>  List</a></li>
+                                <li {% block amortization_index %} {% endblock %}><a href="{{ path('amortization_index')}}"><i class="fa fa-circle-o"></i>  List</a></li>
 
                             </ul>
                         </li> 
-                        <li>
+                        <li {% block amortization_categories %}class="treeview" {% endblock %}>
                             <a href="{{ path('categories_index') }}">
                                 <i class="fa fa-table"></i> <span>Amortization categories</span> <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li ><a href="{{ path('categories_new')}}"><i class="fa fa-circle-o"></i> Create </a></li>
+                                <li {% block amortization_categories_new %} {% endblock %}><a href="{{ path('categories_new')}}"><i class="fa fa-circle-o"></i> Create </a></li>
 
                             </ul>
                             <ul class="treeview-menu">
-                                <li ><a href="{{ path('categories_index')}}"><i class="fa fa-circle-o"></i>  List</a></li>
+                                <li {% block amortization_categories_index %} {% endblock %}><a href="{{ path('categories_index')}}"><i class="fa fa-circle-o"></i>  List</a></li>
 
                             </ul>
                         </li> 
@@ -400,6 +400,30 @@
                                 <li ><a href="{{ path('assets_index')}}"><i class="fa fa-circle-o"></i>  List</a></li>
 
                             </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-table"></i> <span>Ram control</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('Admin_Types_index')}}"><i class="fa fa-circle-o"></i> Types of electricity </a></li>
+
+                            </ul>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('Admin_Zone_index')}}"><i class="fa fa-circle-o"></i> Types of zones</a></li>
+
+                            </ul>
+                                
+                                <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('Admin_PlaceInstallation_index')}}"><i class="fa fa-circle-o"></i> Place of installation </a></li>
+
+                            </ul>
+                                
+                                <ul class="treeview-menu">
+                                <li class="active"><a href="{{ path('Admin_Counter_index')}}"><i class="fa fa-circle-o"></i> Counter </a></li>
+
+                            </ul>
+                                
                         </li>
 
                     </ul>

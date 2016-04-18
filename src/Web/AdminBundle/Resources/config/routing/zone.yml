@@ -1,0 +1,24 @@
+Admin_Zone_index:
+    path:     /
+    defaults: { _controller: "WebAdminBundle:Zone:index" }
+    methods:  GET
+
+Admin_Zone_show:
+    path:     /{id}/show
+    defaults: { _controller: "WebAdminBundle:Zone:show" }
+    methods:  GET
+
+Admin_Zone_new:
+    path:     /new
+    defaults: { _controller: "WebAdminBundle:Zone:new" }
+    methods:  [GET, POST]
+
+Admin_Zone_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WebAdminBundle:Zone:edit" }
+    methods:  [GET, POST]
+
+Admin_Zone_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WebAdminBundle:Zone:delete" }
+    methods:  DELETE

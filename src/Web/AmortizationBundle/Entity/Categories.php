@@ -38,7 +38,7 @@ class Categories
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="useful_time", type="datetime")
+     * @ORM\Column(name="useful_time", type="integer")
      */
     private $usefulTime;
 

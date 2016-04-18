@@ -1,0 +1,34 @@
+{% extends 'WebAdminBundle::base.html.twig' %}
+
+{% block content_wrapper %}
+    <h1>Zone list</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for zone in zones %}
+            <tr>
+                <td><a href="{{ path('Admin_Zone_show', { 'id': zone.id }) }}">{{ zone.id }}</a></td>
+                <td>{{ zone.title }}</td>
+                <td>
+                    
+                            <a class="btn btn-block btn-success btn-sm" href="{{ path('Admin_Zone_show', { 'id': zone.id }) }}">show</a>
+                        
+                            <a class="btn btn-block btn-danger btn-sm" href="{{ path('Admin_Zone_edit', { 'id': zone.id }) }}">edit</a>
+                     
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+            <a class="btn btn-primary" href="{{ path('Admin_Zone_new') }}">Create a new entry</a>
+       
+{% endblock %}

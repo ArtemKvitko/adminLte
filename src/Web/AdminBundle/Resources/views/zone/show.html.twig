@@ -1,0 +1,29 @@
+{% extends 'WebAdminBundle::base.html.twig' %}
+
+{% block content_wrapper %}
+    <h1>Zone</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ zone.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ zone.title }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+            <a class="btn btn-primary" href="{{ path('Admin_Zone_index') }}">Back to the list</a>
+        
+            <a class="btn btn-warning" href="{{ path('Admin_Zone_edit', { 'id': zone.id }) }}">Edit</a>
+        
+            {{ form_start(delete_form) }}
+            <br/>
+                <input class="btn btn-danger" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+    
+{% endblock %}

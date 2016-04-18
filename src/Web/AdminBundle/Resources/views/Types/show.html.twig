@@ -1,0 +1,30 @@
+{% extends 'WebAdminBundle::base.html.twig' %}
+
+{% block content_wrapper %}
+    <h1>Types</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ type.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ type.title }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+            <a class="btn btn-primary" href="{{ path('Admin_Types_index') }}">Back to the list</a>
+            <a class="btn btn-warning" href="{{ path('Admin_Types_edit', { 'id': type.id }) }}">Edit</a>
+      
+     
+            {{ form_start(delete_form) }}
+               <br/>
+                <input class="btn btn-danger" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        
+    
+{% endblock %}

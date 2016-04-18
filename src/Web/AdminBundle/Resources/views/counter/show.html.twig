@@ -1,0 +1,41 @@
+{% extends 'WebAdminBundle::base.html.twig' %}
+
+{% block content_wrapper %}
+    <h1>Counter</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ counter.id }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{% if counter.created %}{{ counter.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Updated</th>
+                <td>{% if counter.updated %}{{ counter.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ counter.number }}</td>
+            </tr>
+            <tr>
+                <th>Numberdigits</th>
+                <td>{{ counter.numberDigits }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   
+            <a class="btn btn-primary" href="{{ path('Admin_Counter_index') }}">Back to the list</a>
+       
+            <a class="btn btn-warning" href="{{ path('Admin_Counter_edit', { 'id': counter.id }) }}">Edit</a>
+        
+            {{ form_start(delete_form) }}
+            <br/>
+                <input class="btn btn-danger" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+   
+{% endblock %}

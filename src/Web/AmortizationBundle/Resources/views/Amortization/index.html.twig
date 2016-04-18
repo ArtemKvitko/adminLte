@@ -16,26 +16,39 @@
             </tr>
         </thead>
         <tbody>
-        {% for amortization in amortizations %}
-            <tr>
-                <td><a href="{{ path('amortization_show', { 'id': amortization.id }) }}">{{ amortization.id }}</a></td>
-                <td>{% if amortization.period %}{{ amortization.period|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ amortization.aset.title | default("Not Set") }}</td>
-                <td>{{ amortization.amortization }}</td>
-                <td>{% if amortization.createTime %}{{ amortization.createTime|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if amortization.updateTime %}{{ amortization.updateTime|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    
-                    <a href="{{ path('amortization_show', { 'id': amortization.id }) }}" class="btn btn-block btn-success btn-sm">show</a>
-                    <br/>   
-                    <a href="{{ path('amortization_edit', { 'id': amortization.id }) }}" class="btn btn-block btn-danger btn-sm">edit</a>
-                                            
-                </td>
-            </tr>
-        {% endfor %}
+            {% for amortization in amortizations %}
+                <tr>
+                    <td><a href="{{ path('amortization_show', { 'id': amortization.id }) }}">{{ amortization.id }}</a></td>
+                    <td>{% if amortization.period %}{{ amortization.period|date('Y-m-d') }}{% endif %}</td>
+                    <td>{{ amortization.aset.title | default("Not Set") }}</td>
+                    <td>{{ amortization.amortization }}</td>
+                    <td>{% if amortization.createTime %}{{ amortization.createTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{% if amortization.updateTime %}{{ amortization.updateTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>
+
+                        <a href="{{ path('amortization_show', { 'id': amortization.id }) }}" class="btn btn-block btn-success btn-sm">show</a>
+                        <br/>   
+                        <a href="{{ path('amortization_edit', { 'id': amortization.id }) }}" class="btn btn-block btn-danger btn-sm">edit</a>
+
+                    </td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('amortization_new') }}" class="btn btn-primary">Create a new entry</a>
- 
+    <a href="{{ path('amortization_new') }}" class="btn btn-primary">Create a new entry</a></br>
+    <form action="{{ path('amortization_calc') }}" method="post">
+        <select name="menu" size="1">
+            {% for key, period in arr_period %}
+                <option value="{{key}}" disabled selected value>{{key}}</option>
+                {% for key_aset, aset in period %}
+                    <option value="{{key}}::{{key_aset}}">{{key_aset | default("Not Set")}}</option>
+                {% endfor %}
+            {% endfor %}
+        </select>
+         <input type="submit" value="Calculate" class="btn btn-info" />
+    </form>
 {% endblock %}
+
+{% block amortization %} class="active treeview" {% endblock  %}
+{% block amortization_index %}class="active" {% endblock %}

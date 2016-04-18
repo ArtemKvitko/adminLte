@@ -1,17 +1,13 @@
 <?php
 
-namespace Web\AmortizationBundle\Form;
+namespace Web\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
-
-class CategoriesType extends AbstractType
+class PlaceInstallationType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -20,9 +16,8 @@ class CategoriesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('sabNumber', IntegerType::class, array('attr' => array('class' => 'form-control')))
             ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('usefulTime', TextType::class, ['attr' => ['class' => 'form-control']])
+            
         ;
     }
     
@@ -32,7 +27,7 @@ class CategoriesType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Web\AmortizationBundle\Entity\Categories'
+            'data_class' => 'Web\AdminBundle\Entity\PlaceInstallation'
         ));
     }
 }

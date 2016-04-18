@@ -1,0 +1,40 @@
+{% extends 'WebAdminBundle::base.html.twig' %}
+
+{% block content_wrapper %}
+    <h1>Counter list</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>Number</th>
+                <th>Numberdigits</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for counter in counters %}
+            <tr>
+                <td><a href="{{ path('Admin_Counter_show', { 'id': counter.id }) }}">{{ counter.id }}</a></td>
+                <td>{% if counter.created %}{{ counter.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if counter.updated %}{{ counter.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ counter.number }}</td>
+                <td>{{ counter.numberDigits }}</td>
+                <td>
+                    
+                            <a class="btn btn-block btn-success btn-sm" href="{{ path('Admin_Counter_show', { 'id': counter.id }) }}">show</a>
+                        
+                            <a class="btn btn-block btn-danger btn-sm" href="{{ path('Admin_Counter_edit', { 'id': counter.id }) }}">edit</a>
+                       
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+            <a class="btn btn-primary" href="{{ path('Admin_Counter_new') }}">Create a new entry</a>
+      
+{% endblock %}
