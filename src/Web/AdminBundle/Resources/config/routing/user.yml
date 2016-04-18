@@ -1,7 +1,9 @@
 admin_users_index:
-    path:     /
+    path:     /{_locale}
     defaults: { _controller: "WebAdminBundle:User:index" }
     methods:  GET
+    requirements:
+        _locale: en|fr
 
 admin_users_show:
     path:     /show/{id}
