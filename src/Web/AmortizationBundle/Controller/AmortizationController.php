@@ -22,16 +22,23 @@ class AmortizationController extends Controller {
      */
     //
 
-    public function dqlAction() {
-        echo rand(11, 23424234) . '<hr/> dql<br/>';
-
+    public function dqlAction(Request $request) {
+        
+        //echo rand(11, 23424234) . '<hr/> dql<br/>';
+        //dump($translator->trans('Hello World'));
+        //$request->getSession()->set('_locale', "fr");
+        
+        $translator = $this->get('translator');
+                
+        //echo $translator->trans('Symfony is great');
+        //echo $translator->trans('Actions');        
+        //exit();
                 
         $em = $this->getDoctrine()->getManager();
 
         //$amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->getAmortizationsByAsertIdAlgTwo(5);
         $amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->getAllOderByPeriodDesc();
         
-        //echo Count($amortizations);
         //exit();
  
         return $this->render('WebAmortizationBundle:Amortization:dql.html.twig', array(
