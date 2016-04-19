@@ -2,10 +2,10 @@ web_amortization_amortization:
     resource: "@WebAmortizationBundle/Resources/config/routing/amortization.yml"
     prefix:   /admin/amortization
 
-#web_amortization_homepage:
-    #path:     /
-    #defaults: { _controller: WebAmortizationBundle:Default:index }
-
 web_amortization_categories:
      resource: "@WebAmortizationBundle/Resources/config/routing/categories.yml"
      prefix:   /admin/categories
+     
+web_amortization_tests:
+     resource: "@WebAmortizationBundle/Resources/config/routing/tests.yml"
+     prefix:   /admin/tests     

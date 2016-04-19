@@ -3,7 +3,7 @@ assets_index:
     defaults: { _controller: "WebAssetsBundle:Assets:index" }
     methods:  GET
     requirements:
-        _locale: en|fr
+        _locale: en|fr|ua
 
 assets_show:
     path:     /{id}/show
