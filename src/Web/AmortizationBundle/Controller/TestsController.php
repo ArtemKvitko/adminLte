@@ -23,7 +23,45 @@ class TestsController extends Controller {
     //
 
     public function arrayAction() {
-        echo rand(11, 23424234) . '<hr/>';
+
+
+        $A[0] = 2;
+        $A[1] = 2;
+        $A[2] = 2;
+        $A[3] = 2;
+        $A[4] = 2;
+        $A[5] = 3;
+        $A[6] = 4;
+        $A[7] = 4;
+        $A[8] = 4;
+        $A[9] = 6;
+
+
+        
+        echo solution(&$A);
+        
+        function solution(&$A) {
+            $n = sizeof($A);
+            $L = array_pad(array(), $n + 1, -1);
+            for ($i = 0; $i < $n; $i++) {
+                $L[$i + 1] = $A[$i];
+            }
+            $count = 0;
+            $pos = (int) (($n + 1) / 2);
+            $candidate = $L[$pos];
+            for ($i = 1; $i <= $n; $i++) {
+                if ($L[$i] == $candidate)
+                    $count = $count + 1;
+            }
+            if ($count > $pos)
+                return $candidate;
+            return (-1);
+        }
+
+        echo  '<hr/>'.rand(11, 23424234) . '<hr/>';
+
+        exit();
+
 
         $Test = array(
             array(
@@ -63,7 +101,7 @@ class TestsController extends Controller {
             $parentArr[$val['parentId']][$val['id']] = "";
         }
         //ksort($keyArr);
-        ksort($parentArr);
+        //ksort($parentArr);
 
         $treeArr = array();
         foreach ($parentArr[""] as $key => $val) {
@@ -86,18 +124,20 @@ class TestsController extends Controller {
         //$amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->getAmortizationsByAsertIdAlgTwo(5);
         $amortizations = $em->getRepository('WebAmortizationBundle:Amortization')->getAllOderByPeriodDesc();
 
+        $count = 30;
 
         return $this->render('WebAmortizationBundle:Tests:dql.html.twig', array(
                     'amortizations' => $amortizations,
+                    'count' => $count
         ));
     }
 
     public function lngAction(Request $request) {
-        
+
         echo rand(11, 23424234) . '<hr/> dql<br/>';
         //$request->getSession()->set('_locale', "fr");
-        $translator = $this->get('translator');                
-        echo $translator->trans('Symfony is great');      
+        $translator = $this->get('translator');
+        echo $translator->trans('Symfony is great');
         exit();
     }
 
